@@ -1,0 +1,271 @@
+<div *ngIf="showMenu">
+<div class="col-12 text-center" *ngIf="registered">
+	<div class="alert alert-success" role="alert">
+		Registerd Succesfully. Please Login.
+	</div>
+</div>
+<div class="col-12 text-center">
+	<div class="alert alert-danger" role="alert" *ngIf="formSubmitted && !registered">
+		Registration is Unsuccesfull. Please try again.
+	</div>
+</div>
+<div class="main" style="width: 100%; overflow: auto;">
+	<div class="sec">
+		<h3 style="color: #483D8B">
+			<i class="fas fa-search"></i> Follow your interests.
+		</h3>
+		<br>
+		<h3 style="color: #8B0000">
+			<i class="fas fa-users"></i> Hear what people are talking about.
+		</h3>
+		<br>
+		<h3 style="color: #2F4F4F">
+			<i class="fas fa-comments"></i> Join the conversation.
+		</h3>
+	</div>
+	<div class="container">
+		<h2 style="color: green">Welcome to Tweet-App !!</h2>
+		<br>
+		<button style="width: 300px;" class="btn btn-lg btn-block btn-primary" data-toggle="modal"
+			data-target="#modalSignup">Sign up</button>
+		<br>
+		<button style="width: 300px;" class="btn btn-lg btn-block btn-outline-success" data-toggle="modal"
+			data-target="#modalLogin">Log in</button>
+		<br>
+		<a href="#" data-toggle="modal" data-target="#modalForgotPassword">Forgot Password</a>
+	</div>
+</div>
+
+<div class="modal fade" id="modalSignup" tabindex="-1" role="dialog" aria-labelledby="modalSignupLabel"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Sign up</h5>
+				<button type="button" #closebutton class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form [formGroup]="signupForm">
+					<div class="form-group">
+						<label for="inputFirstname"><b>First Name</b></label> <input type="text" class="form-control"
+							placeholder="Enter First Name" id="firstName" formControlName="firstName">
+						<small class="text-danger"
+							*ngIf="signupForm.get('firstName').touched && signupForm.get('firstName').hasError('required')">
+							First Name is required
+						</small>
+					</div>
+					<div class="form-group">
+						<label for="inputLastname"><b>Last Name</b></label> <input type="text" class="form-control"
+							id="lastName" formControlName="lastName" placeholder="Enter Last Name">
+						<small class="text-danger"
+							*ngIf="signupForm.get('lastName').touched && signupForm.get('lastName').hasError('required')">
+							Last Name is required
+						</small>
+					</div>
+					<div class="form-group">
+						<label for="inputEmail"><b>Email</b></label> <input type="email" class="form-control" id="email"
+							placeholder="Enter your email" formControlName="email">
+						<small class="text-danger"
+							*ngIf="signupForm.get('email').touched && signupForm.get('email').hasError('required')">
+							Email is required
+						</small>
+						<small class="text-danger"
+							*ngIf="signupForm.get('email').touched && signupForm.get('email').hasError('email')">
+							Enter a valid e-mail.
+						</small>
+						<div class="alert alert-danger" role="alert" *ngIf="signupForm.get('email').touched &&
+          												signupForm.get('email').hasError('emailTaken')">
+							EmailId already exists
+						</div>
+						<div class="alert alert-success" role="alert" *ngIf="signupForm.get('email').touched &&
+          												signupForm.get('email').valid && emailNotTaken">
+							EmailId available
+						</div>
+						<div class="alert alert-warning" role="alert" *ngIf="signupForm.pending">
+							<div class="spinner-border" role="status">
+								<span class="sr-only">Loading...</span>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputEmail"><b>Login Id</b></label> <input type="text" class="form-control"
+							id="loginId" placeholder="Enter Login Id" formControlName="loginId">
+						<small class="text-danger"
+							*ngIf="signupForm.get('loginId').touched && signupForm.get('loginId').hasError('required')">
+							Login Id is required
+						</small>
+						<div class="alert alert-danger" role="alert" *ngIf="signupForm.get('loginId').touched &&
+          												signupForm.get('loginId').hasError('userNameTaken')">
+							Id already exists
+						</div>
+						<div class="alert alert-success" role="alert" *ngIf="signupForm.get('loginId').touched &&
+          												signupForm.get('loginId').valid && userNameNotTaken">
+							Id available
+						</div>
+						<div class="alert alert-warning" role="alert" *ngIf="signupForm.pending">
+							<div class="spinner-border" role="status">
+								<span class="sr-only">Loading...</span>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword"><b>Password</b></label><input type="password"
+							class="form-control" id="password" placeholder="Enter password" formControlName="password">
+						<small class="text-danger"
+							*ngIf="signupForm.get('password').touched && signupForm.get('password').hasError('required')">
+							Password is required
+						</small>
+						<small class="text-danger"
+							*ngIf="signupForm.get('password').touched && signupForm.get('password').hasError('minlength')">
+							Password should be minimum 6 characters
+						</small>
+					</div>
+					<div class="form-group">
+						<label for="inputConfirmPassword"><b>Confirm Password</b></label><input type="password"
+							class="form-control" id="confirmPassword" placeholder="Re-Enter password"
+							formControlName="confirmPassword">
+						<small class="text-danger"
+							*ngIf="signupForm.get('confirmPassword').touched && signupForm.get('confirmPassword').hasError('required')">
+							Confirm Password is required
+						</small>
+						<small class="text-danger"
+							*ngIf="signupForm.get('confirmPassword').touched && signupForm.get('confirmPassword').hasError('nomatch')">Confirm
+							Password should match Password
+						</small>
+					</div>
+					<div class="form-group">
+						<label for="inputContactInfo"><b>Contact Number</b></label><input type="text"
+							class="form-control" id="contactNumber" placeholder="Enter Contact Number"
+							formControlName="contactNumber">
+						<small class="text-danger"
+							*ngIf="signupForm.get('contactNumber').touched && signupForm.get('contactNumber').hasError('required')">
+							Contact Number is required
+						</small>
+						<small class="text-danger"
+							*ngIf="signupForm.get('contactNumber').touched && signupForm.get('contactNumber').hasError('pattern')">Contact
+							Number should have only numbers.</small>
+						<small class="text-danger"
+							*ngIf="signupForm.get('contactNumber').touched && signupForm.get('contactNumber').hasError('maxlength')">
+							Contact Number needs to be 10 digits.
+						</small>
+						<small class="text-danger"
+							*ngIf="signupForm.get('contactNumber').touched && signupForm.get('contactNumber').hasError('minlength')">
+							Contact Number needs to be 10 digits.
+						</small>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary" (click)="onSubmitSignup()"
+							[disabled]="!signupForm.valid">Sign up</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Log in</h5>
+				<button type="button" class="close" #closebutton1 data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form [formGroup]="loginForm">
+					<div class="form-group">
+						<label for="inputUsername"><b>Username</b></label> <input type="text" class="form-control"
+							id="loginUserId" formControlName="loginUserId" placeholder="Enter username">
+						<small class="text-danger"
+							*ngIf="loginForm.get('loginUserId').touched 
+							&& loginForm.get('loginUserId').hasError('required')">
+							Username is required
+						</small>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword"><b>Password</b></label><input type="password" class="form-control"
+							id="loginpassword" formControlName="loginPassword" placeholder="Enter password">
+						<small class="text-danger"
+							*ngIf="loginForm.get('loginPassword').touched 
+							&& loginForm.get('loginPassword').hasError('required')">
+							Password is required
+						</small>
+						<small class="text-danger"
+							*ngIf="loginForm.get('loginPassword').touched 
+							&& loginForm.get('loginPassword').hasError('minlength')">
+							Password should be minimum 6 characters
+						</small>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary" (click)="onSubmitLogin()"
+						[disabled]="!loginForm.valid">Log in</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="modalForgotPassword" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Forgot Password</h5>
+				<button type="button" class="close" #closebutton2 data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form [formGroup]="forgotPasswordForm">						
+					<div class="form-group">
+						<label for="inputUsername"><b>Username</b></label> <input type="text"
+							class="form-control" id="userName" formControlName="userName" placeholder="Enter username">
+						<small class="text-danger"
+							*ngIf="forgotPasswordForm.get('userName').touched 
+							&& forgotPasswordForm.get('userName').hasError('required')">
+							Username is required
+						</small>
+						<div class="alert alert-danger" role="alert" *ngIf="forgotPasswordForm.get('userName').touched 
+						&& forgotPasswordForm.get('userName').hasError('userNotExist')">
+							Username does not exist
+						</div>
+						<div class="alert alert-warning" role="alert" *ngIf="forgotPasswordForm.pending">
+							<div class="spinner-border" role="status">
+								<span class="sr-only">Loading...</span>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputNewPassword"><b>New Password</b></label><input
+							type="password" class="form-control" id="newPassword" formControlName="newPassword"
+							placeholder="Enter New Password">
+						<small class="text-danger"
+							*ngIf="forgotPasswordForm.get('newPassword').touched 
+							&& forgotPasswordForm.get('newPassword').hasError('required')">
+							Password is required
+						</small>
+						<small class="text-danger"
+							*ngIf="forgotPasswordForm.get('newPassword').touched 
+							&& forgotPasswordForm.get('newPassword').hasError('minlength')">
+							Password should be minimum 6 characters
+						</small>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary" (click)="onSubmitForgotPassword()"
+						 [disabled]="!forgotPasswordForm.valid">Submit</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<router-outlet></router-outlet>

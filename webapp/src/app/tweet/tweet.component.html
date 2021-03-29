@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col d-flex justify-content-cemter">
+            <form id="postTweetForm" method="POST">
+                <div class="form-label-group">
+                    <textarea class="form-control" placeholder="What's on your mind"
+                        id="tweet" required></textarea>
+                </div>
+                <div class="form-label-group">
+                    <button class="btn btn-primary" type="submit">Post Tweet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div style="margin-top: 4rem;">
+        <table class="table dataTable">
+            <thead>
+                <tr>
+                    <th class="text-center" colspan="2">All Tweets</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                    <tr>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

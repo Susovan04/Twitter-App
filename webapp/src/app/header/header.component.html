@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #B0E1E1">
+    <a class="navbar-brand" routerLink="/tweet" style="color: #2F4F4F">Tweet-App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" *ngIf="isAuthenticated()">
+          <a class="nav-link" routerLink="/tweet" style="color: #2F4F4F">Home</a>
+        </li>
+        <li class="nav-item" *ngIf="isAuthenticated()">
+          <a class="nav-link" routerLink="/viewUser" style="color: #2F4F4F">All User</a>
+        </li>
+        <li class="nav-item" *ngIf="isAuthenticated()">
+          <a class="nav-link" routerLink="/resetPassword" style="color: #2F4F4F">Reset Password</a>
+        </li>
+       </ul>
+       <ul class="navbar-nav navbar-right" *ngIf="isAuthenticated()">
+           <li class="nav-item"><a class="nav-link" routerLink="/"
+            style="color: #2F4F4F" (click)="onSignout()">Logout</a></li>
+       </ul>
+    </div>
+  </nav>

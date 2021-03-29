@@ -1,0 +1,12 @@
+.sec {
+	width: 50%;
+	float: right;
+	margin-top: 160px;
+}
+
+.container {
+	display: block;
+	justify-content: center;
+	align-items: cemter;
+	margin-top: 150px;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, resolveForwardRef, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -146,6 +146,7 @@ export class AppComponent implements OnInit{
       (responseError) => {
         this.error = responseError.error.errorMessage;
       });
+      this.signupForm.reset();
   }
 
   onSubmitForgotPassword() {
@@ -161,6 +162,7 @@ export class AppComponent implements OnInit{
       (responseError) => {
         this.error = responseError.error.errorMessage;
       });
+      this.forgotPasswordForm.reset();
   }
 
   onSubmitLogin() {
@@ -169,19 +171,23 @@ export class AppComponent implements OnInit{
     this.closeButton1.nativeElement.click();
     this.login(this.loginForm.get("loginUserId").value, this.loginForm.get("loginPassword").value).subscribe(
       (response) => {
-        console.log("success"+JSON.stringify(response));
+        console.log("success"+response);
         if(response) {
           this.authService.isLoggedin = true;
+          const data = JSON.parse(JSON.stringify(response));
+          console.log(data.loginId)
+          this.authService.loggedInUserId = data.loginId;
           this.router.navigate(['/tweet']);
         }
       },
       (responseError) => {
         this.error = responseError.error.errorMessage;
       });
+      this.loginForm.reset();
   }
 
   login(loginUserId: string, loginPassword: string) : Observable<Object> {
-    return this.httpClient.post(environment.baseUrl+"login",{loginUserId,loginPassword});
+    return this.httpClient.post<User>(environment.baseUrl+"login",{loginUserId,loginPassword});
   }
 
   forgotPassword(userName: string, newPassword: string): Observable<Object> {

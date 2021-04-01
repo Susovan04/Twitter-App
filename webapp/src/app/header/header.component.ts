@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthServiceService } from '../services/auth-service.service';
+import { ViewUserComponent } from '../view-user/view-user.component';
 
 @Component({
   selector: 'app-header',
@@ -21,5 +22,8 @@ export class HeaderComponent implements OnInit {
   onSignout() {
     this.router.navigate(["/"]);
     this.authService.isLoggedin = false;
+    this.authService.loggedInUserId = null;
   }
+
+
 }

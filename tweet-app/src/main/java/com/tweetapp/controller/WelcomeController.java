@@ -1,5 +1,8 @@
 package com.tweetapp.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
@@ -17,9 +20,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.tweetapp.model.TweetData;
 import com.tweetapp.model.UserDetails;
+import com.tweetapp.repository.TweetRepository;
 import com.tweetapp.repository.UserRepository;
 import com.tweetapp.service.WelcomeService;
 
@@ -36,6 +39,9 @@ public class WelcomeController {
 	
 	@Autowired
 	UserRepository userRepository;
+	
+	@Autowired
+	TweetRepository tweetRepository;
 	
 	@PostMapping("/register")
 	public void userSignup(@RequestBody UserDetails userData) {
@@ -75,8 +81,20 @@ public class WelcomeController {
 		userRepository.save(user.get());
 	}
 	
+	@PutMapping("/{username}/reset")
+	public void resetPassword(@PathVariable("username") String username, @RequestBody String newPassword) {
+		System.out.println(username + "---" + newPassword);
+		System.out.println(session.getAttribute("userDetails"));
+
+		Optional<UserDetails> user = userRepository.findById(username);
+		System.out.println(user.get().toString());
+		user.get().setPassword(newPassword);
+		userRepository.save(user.get());
+
+	}
+	
 	@PostMapping("/login")
-	public String userLogin(@RequestBody String json) {
+	public UserDetails userLogin(@RequestBody String json) {
 		System.out.println(json);
 		JSONParser parse = new JSONParser();
 		try {
@@ -84,16 +102,67 @@ public class WelcomeController {
 			System.out.println(obj.get("loginUserId")+"--"+obj.get("loginPassword"));
 			UserDetails loggedInUser = userRepository.getUser((String)obj.get("loginUserId"), (String) obj.get("loginPassword"));
 			System.out.println(loggedInUser.toString());
-			session.setAttribute("userDetails", loggedInUser);
-			ObjectMapper mapper = new ObjectMapper();
-			try {
-				return mapper.writeValueAsString(loggedInUser.toString());
-			} catch (JsonProcessingException e) {
-				e.printStackTrace();
-			}
+			return loggedInUser;
 		} catch (ParseException | NullPointerException e) {
 			System.out.println("Exception : "+e);
 		}
 		return null;
+	}
+	
+	@GetMapping("/users/all")
+	public List<UserDetails> allUser() {
+		System.out.println(userRepository.findAll().toString());
+		return userRepository.findAll();
+	}
+	
+	@PostMapping("/{username}/add")
+	public void postTweet(@PathVariable("username") String username, @RequestBody String tweetData) {
+		TweetData tweet = new TweetData();
+		System.out.println(username+"----"+tweetData);
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+	    Date date = new Date();  
+	    System.out.println(formatter.format(date));  
+	    String ex = "04/04/2021 20:08:55"; 
+	    tweet.setUserName(username);
+	    tweet.setTime(formatter.format(date));
+	    tweet.setTweet(tweetData);
+	    tweetRepository.insert(tweet);
+		try {
+			Date date1 = formatter.parse(formatter.format(date));
+			Date date2 = formatter.parse(ex);
+			
+			long time_difference = date2.getTime() - date1.getTime();  
+	        // Calucalte time difference in days  
+	        long days_difference = (time_difference / (1000*60*60*24)) % 365;   
+	        // Calucalte time difference in years  
+	        long years_difference = (time_difference / (1000l*60*60*24*365));   
+	        // Calucalte time difference in seconds  
+	        long seconds_difference = (time_difference / 1000)% 60;   
+	        // Calucalte time difference in minutes  
+	        long minutes_difference = (time_difference / (1000*60)) % 60;   
+	          
+	        // Calucalte time difference in hours  
+	        long hours_difference = (time_difference / (1000*60*60)) % 24;
+	        
+	        System.out.print(   
+	                "Difference "  
+	                + "between two dates is: ");   
+	            System.out.println(   
+	                hours_difference   
+	                + " hours, "  
+	                + minutes_difference   
+	                + " minutes, "  
+	                + seconds_difference   
+	                + " seconds, "  
+	                + years_difference   
+	                + " years, "  
+	                + days_difference   
+	                + " days"  
+	                );
+	        
+		} catch (java.text.ParseException e) {
+			e.printStackTrace();
+		}
+	     
 	}
 }

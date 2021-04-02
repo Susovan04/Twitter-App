@@ -4,22 +4,20 @@
         <div class="col d-flex justify-content-cemter">
             <form [formGroup]="postTweetForm" id="postTweetForm">
                 <div class="form-label-group">
-                    <textarea class="form-control" placeholder="What's on your mind"
-                        id="tweet" formControlName="tweet"></textarea>
-                    <small class="text-danger"
-                        *ngIf="postTweetForm.get('tweet').touched 
+                    <textarea class="form-control" placeholder="What's on your mind" id="tweet"
+                        formControlName="tweet"></textarea>
+                    <small class="text-danger" *ngIf="postTweetForm.get('tweet').touched 
                         && postTweetForm.get('tweet').hasError('required')">
                         It seems you havn't written anything.
                     </small>
-                    <small class="text-danger"
-                        *ngIf="postTweetForm.get('tweet').touched 
+                    <small class="text-danger" *ngIf="postTweetForm.get('tweet').touched 
                         && postTweetForm.get('tweet').hasError('maxlength')">
                         Maximum 144 characters allowed
                     </small>
                 </div>
                 <div class="form-label-group">
-                    <button class="btn btn-primary" type="submit" [disabled]="!postTweetForm.valid" 
-                    (click)="onSubmitTweet()">Post Tweet</button>
+                    <button class="btn btn-primary" type="submit" [disabled]="!postTweetForm.valid"
+                        (click)="onSubmitTweet()">Post Tweet</button>
                 </div>
             </form>
         </div>
@@ -28,15 +26,69 @@
         <table class="table dataTable">
             <thead>
                 <tr>
-                    <th class="text-center" colspan="2">All Tweets</th>
+                    <th class="text-center" colspan="3">All Tweets</th>
                 </tr>
             </thead>
             <tbody id="tbody">
-                    <tr>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                    </tr>
+                <div *ngFor="let tweet of tweets">
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <h6 class="card-title font-weight-normal">
+                                <div class="d-flex ml-1">
+                                    <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar"
+                                        class="avatar">
+                                    <span style="margin-left: 1rem;"><b>@{{tweet.userName}}</b></span>
+                                    <span style="margin-left: 18rem;">{{tweet.time}}</span>
+                                </div>
+                            </h6>
+                            <div class="card-text" style="text-align: justify;">
+                                {{tweet.tweet}} <br>
+                                <div style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
+                                    <button class="btn btn-sm btn-outline-success" data-toggle="modal"
+                                    data-target="#modalTweetReply" (click)="showModal(tweet.id)">Reply</button>
+                                </div>
+                                <div style="text-align: center; margin-bottom: 0.5rem;"><b>All Replies</b><hr></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </tbody>
         </table>
     </div>
+</div>
+
+<div *ngIf="openModal">
+<div class="modal fade" id="modalTweetReply" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tweet Reply</h5>
+                <button type="button" class="close" #closebutton data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="tweetReplyForm">
+                    <div class="form-group">
+                        <textarea class="form-control" id="reply" placeholder="Enter your Reply" 
+                            formControlName="reply"></textarea>
+                        <small class="text-danger" *ngIf="tweetReplyForm.get('reply').touched 
+                            && tweetReplyForm.get('reply').hasError('required')">
+                            It seems you havn't written anything.
+                        </small>
+                        <small class="text-danger" *ngIf="tweetReplyForm.get('reply').touched 
+                            && tweetReplyForm.get('reply').hasError('maxlength')">
+                            Maximum 144 characters allowed
+                        </small>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" [disabled]="!tweetReplyForm.valid"
+                        (click)="onSubmitTweetReply()">Submit</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 </div>

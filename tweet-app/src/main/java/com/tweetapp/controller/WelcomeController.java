@@ -1,9 +1,11 @@
 package com.tweetapp.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 
@@ -119,29 +121,37 @@ public class WelcomeController {
 	public void postTweet(@PathVariable("username") String username, @RequestBody String tweetData) {
 		TweetData tweet = new TweetData();
 		System.out.println(username+"----"+tweetData);
-		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
-	    Date date = new Date();  
-	    System.out.println(formatter.format(date));  
-	    String ex = "04/04/2021 20:08:55"; 
+		String cuurentDate = getCurrentDate(); 
 	    tweet.setUserName(username);
-	    tweet.setTime(formatter.format(date));
+	    tweet.setTime(cuurentDate);
 	    tweet.setTweet(tweetData);
-	    tweetRepository.insert(tweet);
+	    tweet.setId(UUID.randomUUID());
+	    tweetRepository.insert(tweet);	     
+	}
+
+	private String timeDifference(String cuurentDate, String storedDate) {
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"); 
 		try {
-			Date date1 = formatter.parse(formatter.format(date));
-			Date date2 = formatter.parse(ex);
+			Date date1 = formatter.parse(cuurentDate);
+			Date date2 = formatter.parse(storedDate);
 			
-			long time_difference = date2.getTime() - date1.getTime();  
-	        // Calucalte time difference in days  
+			long time_difference = date1.getTime() - date2.getTime();  
+	        
+			// Calculate time difference in days  
 	        long days_difference = (time_difference / (1000*60*60*24)) % 365;   
-	        // Calucalte time difference in years  
+	        
+	        // Calculate time difference in years  
 	        long years_difference = (time_difference / (1000l*60*60*24*365));   
-	        // Calucalte time difference in seconds  
-	        long seconds_difference = (time_difference / 1000)% 60;   
-	        // Calucalte time difference in minutes  
+			
+	        /*
+			 * // Calculate time difference in seconds long seconds_difference =
+			 * (time_difference / 1000)% 60;
+			 */ 
+	        
+	        // Calculate time difference in minutes  
 	        long minutes_difference = (time_difference / (1000*60)) % 60;   
 	          
-	        // Calucalte time difference in hours  
+	        // Calculate time difference in hours  
 	        long hours_difference = (time_difference / (1000*60*60)) % 24;
 	        
 	        System.out.print(   
@@ -151,18 +161,52 @@ public class WelcomeController {
 	                hours_difference   
 	                + " hours, "  
 	                + minutes_difference   
-	                + " minutes, "  
-	                + seconds_difference   
-	                + " seconds, "  
+	                + " minutes, "    
 	                + years_difference   
 	                + " years, "  
 	                + days_difference   
 	                + " days"  
 	                );
+	            
+	            if(years_difference == 0) {
+	            	if(days_difference == 0) {
+	            		if(hours_difference == 0) {
+	            			if(minutes_difference == 0) {
+	            				return "just now";
+	            			} else {
+	            				return String.valueOf(minutes_difference) + "minutes ago";
+	            			}
+	            		} else {
+	            			return String.valueOf(hours_difference) + "hours ago";
+	            		}
+	            	} else {
+	            		return String.valueOf(days_difference) + "days ago";
+	            	}
+	            } else {
+	            	return String.valueOf(years_difference) + "year ago";
+	            }
 	        
 		} catch (java.text.ParseException e) {
 			e.printStackTrace();
 		}
-	     
+		 return "Error fetching time";
+	}
+	
+	@GetMapping("/tweets/all")
+	public List<TweetData> allTweet() {
+		List<TweetData> tweetList = new ArrayList<TweetData>();
+		for(TweetData tweet : tweetRepository.findAll()) {
+			String timeDiff = timeDifference(getCurrentDate(), tweet.getTime());
+			tweet.setTime(timeDiff);
+			tweetList.add(tweet);
+		}
+		return tweetList;
+	}
+	
+	public String getCurrentDate() {
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+	    Date date = new Date();  
+	    System.out.println(formatter.format(date)); 
+	    return formatter.format(date);
 	}
 }

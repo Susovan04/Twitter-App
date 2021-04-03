@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tweetapp.model.Replies;
 import com.tweetapp.model.TweetData;
 import com.tweetapp.model.UserDetails;
 import com.tweetapp.repository.TweetRepository;
@@ -123,6 +124,7 @@ public class WelcomeController {
 		System.out.println(username+"----"+tweetData);
 		String cuurentDate = getCurrentDate(); 
 	    tweet.setUserName(username);
+	    tweet.setAvatar(userRepository.findById(username).get().getImage());
 	    tweet.setTime(cuurentDate);
 	    tweet.setTweet(tweetData);
 	    tweet.setId(UUID.randomUUID());
@@ -198,6 +200,39 @@ public class WelcomeController {
 		for(TweetData tweet : tweetRepository.findAll()) {
 			String timeDiff = timeDifference(getCurrentDate(), tweet.getTime());
 			tweet.setTime(timeDiff);
+			for(Replies reply : tweet.getReplies()) {
+				String replyTime = timeDifference(getCurrentDate(), reply.getTime());
+				reply.setTime(replyTime);
+			}
+			tweetList.add(tweet);
+		}
+		return tweetList;
+	}
+	
+	@PostMapping("/{username}/reply/{id}")
+	public void addReply(@PathVariable("username") String userName, @PathVariable("id") UUID tweetId, @RequestBody String replyData) {
+		Optional<TweetData> tweet = tweetRepository.findById(tweetId);
+		
+		Replies reply = new Replies();
+		reply.setTime(getCurrentDate());
+		reply.setReply(replyData);
+		reply.setUserName(userName);
+		reply.setAvatar(userRepository.findById(userName).get().getImage());
+		tweet.get().getReplies().add(reply);
+		System.out.println("------"+tweet.get());
+		tweetRepository.save(tweet.get());
+	}
+	
+	@GetMapping("/{username}")
+	public List<TweetData> getAllMyTweet(@PathVariable("username") String userName) {
+		List<TweetData> tweetList = new ArrayList<TweetData>();
+		for(TweetData tweet : tweetRepository.findByUserName(userName)) {
+			String timeDiff = timeDifference(getCurrentDate(), tweet.getTime());
+			tweet.setTime(timeDiff);
+			for(Replies reply : tweet.getReplies()) {
+				String replyTime = timeDifference(getCurrentDate(), reply.getTime());
+				reply.setTime(replyTime);
+			}
 			tweetList.add(tweet);
 		}
 		return tweetList;

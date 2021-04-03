@@ -1,14 +1,3 @@
-.form-label-group {
-	position: relative;
-	margin-bottom: 1rem;
-}
-
-#postTweetForm {
-	margin: auto;
-	margin-top: 1rem;
-	width: 40%;
-}
-
 .table.dataTable {
 	margin: auto;
 	width: 50%;

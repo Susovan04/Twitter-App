@@ -3,9 +3,10 @@ package com.tweetapp.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(value = "user_details")
 public class UserDetails {
 	
+	private String image;
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -13,6 +14,14 @@ public class UserDetails {
 	private String loginId;
 	private String password;
 	private String contactNumber;
+	
+	
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -51,8 +60,7 @@ public class UserDetails {
 	}
 	@Override
 	public String toString() {
-		return "UserDetails [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", loginId="
-				+ loginId + ", password=" + password + ", contactNumber=" + contactNumber + "]";
+		return "UserDetails [image=" + image + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
+				+ email + ", loginId=" + loginId + ", password=" + password + ", contactNumber=" + contactNumber + "]";
 	}
-
 }

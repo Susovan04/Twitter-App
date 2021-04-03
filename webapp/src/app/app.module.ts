@@ -11,9 +11,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { AuthGuard } from './auth.guard';
+import { MyTweetsComponent } from './my-tweets/my-tweets.component';
 
 const routes: Routes = [{ path: 'tweet', component: TweetComponent, canActivate: [AuthGuard] },
 {path:'viewUser', component : ViewUserComponent, canActivate: [AuthGuard]},
+{path:'myTweets', component : MyTweetsComponent, canActivate: [AuthGuard]},
 {path:'resetPassword', component : PasswordResetComponent, canActivate: [AuthGuard]}
 ];
 
@@ -23,7 +25,8 @@ const routes: Routes = [{ path: 'tweet', component: TweetComponent, canActivate:
     TweetComponent,
     HeaderComponent,
     ViewUserComponent,
-    PasswordResetComponent
+    PasswordResetComponent,
+    MyTweetsComponent
   ],
   imports: [
     BrowserModule,

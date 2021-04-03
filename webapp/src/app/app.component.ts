@@ -34,13 +34,14 @@ export class AppComponent implements OnInit{
     router.events.forEach((event)=>{
       if(event instanceof NavigationStart) {
         this.showMenu = event.url !== "/tweet" && event.url !== "/viewUser" 
-        && event.url !== "/resetPassword"
+        && event.url !== "/resetPassword" && event.url !== "/myTweets"
       }
     });
   }
    
   ngOnInit(){
     this.signupForm = new FormGroup({
+      'image': new FormControl('', [Validators.required]),
       'firstName': new FormControl('', [Validators.required]),
       'lastName': new FormControl('', [Validators.required]),
       'email': new FormControl('', [Validators.required, Validators.email], this.isEmailExist.bind(this)),

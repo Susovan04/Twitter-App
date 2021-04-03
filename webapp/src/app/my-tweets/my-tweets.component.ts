@@ -7,60 +7,33 @@ import { AuthServiceService } from '../services/auth-service.service';
 import { Tweet } from '../tweet';
 
 @Component({
-  selector: 'app-tweet',
-  templateUrl: './tweet.component.html',
-  styleUrls: ['./tweet.component.css']
+  selector: 'app-my-tweets',
+  templateUrl: './my-tweets.component.html',
+  styleUrls: ['./my-tweets.component.css']
 })
-export class TweetComponent implements OnInit {
+export class MyTweetsComponent implements OnInit {
 
-  postTweetForm : FormGroup;
   tweetReplyForm : FormGroup;
   tweets : Tweet[];
   tweetId : any = null;
 
   @ViewChild("closebutton") closeButton;
-  
+
   constructor(private http : HttpClient, private authService : AuthServiceService) { }
 
   ngOnInit(){
-    this.postTweetForm = new FormGroup({
-      "tweet" : new FormControl('', [Validators.required, Validators.maxLength(144)])
-    });
 
     this.tweetReplyForm = new FormGroup({
       "reply" : new FormControl('', [Validators.required, Validators.maxLength(144)])
     });
 
-    this.getAllTweets().subscribe(
+    this.getAllMyTweets().subscribe(
       (response) => {
         console.log(response);
         this.tweets = response;
       }
     );
-  }
 
-  getAllTweets() : Observable<any[]> {
-    return this.http.get<Tweet[]>(environment.baseUrl+"tweets/all");
-  }
-
-  onSubmitTweet() {
-    console.log(this.postTweetForm.value);
-    this.postTweet(this.postTweetForm.get("tweet").value).subscribe(
-      (response) => {
-        console.log("tweet posted");
-        this.getAllTweets().subscribe(
-          (response) => {
-            console.log(response);
-            this.tweets = response;
-          }
-        );
-      }
-    );
-    this.postTweetForm.reset();
-  }
-
-  postTweet(tweet: string) : Observable<Object>{
-    return this.http.post(environment.baseUrl+this.authService.loggedInUserId+"/add",tweet);
   }
 
   onSubmitTweetReply() {
@@ -69,7 +42,7 @@ export class TweetComponent implements OnInit {
     this.postReply(this.tweetReplyForm.get("reply").value).subscribe(
       (response) => {
         console.log(response);
-        this.getAllTweets().subscribe(
+        this.getAllMyTweets().subscribe(
           (response) => {
             console.log(response);
             this.tweets = response;
@@ -88,4 +61,9 @@ export class TweetComponent implements OnInit {
     console.log(id);
     this.tweetId = id;
   }
+
+  getAllMyTweets() : Observable<any[]> {
+    return this.http.get<Tweet[]>(environment.baseUrl+this.authService.loggedInUserId);
+  }
+
 }

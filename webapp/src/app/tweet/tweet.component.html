@@ -35,19 +35,25 @@
                         <div class="card-body">
                             <h6 class="card-title font-weight-normal">
                                 <div class="d-flex ml-1">
-                                    <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar"
-                                        class="avatar">
+                                    <img src="{{tweet.avatar}}" alt="Avatar" class="avatar">
                                     <span style="margin-left: 1rem;"><b>@{{tweet.userName}}</b></span>
                                     <span style="margin-left: 18rem;">{{tweet.time}}</span>
                                 </div>
                             </h6>
-                            <div class="card-text" style="text-align: justify;">
+                            <div class="card-text">
                                 {{tweet.tweet}} <br>
                                 <div style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
                                     <button class="btn btn-sm btn-outline-success" data-toggle="modal"
-                                    data-target="#modalTweetReply" (click)="showModal(tweet.id)">Reply</button>
+                                        data-target="#modalTweetReply" (click)="showModal(tweet.id)">Reply</button>
                                 </div>
-                                <div style="text-align: center; margin-bottom: 0.5rem;"><b>All Replies</b><hr></div>
+                                <div style="text-align: center; margin-bottom: 0.5rem;"><b>All Replies</b>
+                                    <hr>
+                                </div>
+                                <div *ngFor="let reply of tweet.replies" class="d-flex ml-1">
+                                    <img src="{{reply.avatar}}" alt="Avatar" class="avatarReply">
+                                    <b>@{{reply.userName}}</b> ({{reply.time}}) :
+                                    <span style="margin-left: 3rem;">{{reply.reply}}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -57,7 +63,6 @@
     </div>
 </div>
 
-<div *ngIf="openModal">
 <div class="modal fade" id="modalTweetReply" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -70,7 +75,7 @@
             <div class="modal-body">
                 <form [formGroup]="tweetReplyForm">
                     <div class="form-group">
-                        <textarea class="form-control" id="reply" placeholder="Enter your Reply" 
+                        <textarea class="form-control" id="reply" placeholder="Enter your Reply"
                             formControlName="reply"></textarea>
                         <small class="text-danger" *ngIf="tweetReplyForm.get('reply').touched 
                             && tweetReplyForm.get('reply').hasError('required')">
@@ -83,12 +88,11 @@
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary" [disabled]="!tweetReplyForm.valid"
-                        (click)="onSubmitTweetReply()">Submit</button>
+                            (click)="onSubmitTweetReply()">Submit</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-</div>
 </div>

@@ -49,6 +49,14 @@
 			<div class="modal-body">
 				<form [formGroup]="signupForm">
 					<div class="form-group">
+						<label for="inputImage"><b>Profile Image</b></label> <input type="text" class="form-control"
+							placeholder="Enter Image Url" formControlName="image">
+						<small class="text-danger"
+							*ngIf="signupForm.get('image').touched && signupForm.get('image').hasError('required')">
+							Image is required
+						</small>
+					</div>
+					<div class="form-group">
 						<label for="inputFirstname"><b>First Name</b></label> <input type="text" class="form-control"
 							placeholder="Enter First Name" id="firstName" formControlName="firstName">
 						<small class="text-danger"

@@ -135,14 +135,19 @@ export class AppComponent implements OnInit{
   onSubmitSignup() {
     console.log("In submit");
     console.log(this.signupForm.value);   
-    this.registered = true; 
-    setTimeout(() => {
-      this.registered = false;
-    },3000);
     this.closeButton.nativeElement.click();
     this.addUser(this.signupForm.value).subscribe(
       (response) => {
-        console.log("success");
+        console.log(response);
+        if(response) {
+          this.registered = true; 
+          setTimeout(() => {
+            this.registered = false;
+          },3000);
+
+        } else {
+          alert("Error Occured doing Signup");
+        }
       },
       (responseError) => {
         this.error = responseError.error.errorMessage;
@@ -157,8 +162,11 @@ export class AppComponent implements OnInit{
     this.forgotPassword(this.forgotPasswordForm.get("userName").value, 
       this.forgotPasswordForm.get("newPassword").value).subscribe(
       (response) => {
-        console.log("success");
-        alert('Password Reset Successfully! Please login');
+        console.log(response);
+        if(response)
+          alert('Password Reset Successfully! Please login');
+        else
+          alert('Error Occured!!');
       },
       (responseError) => {
         this.error = responseError.error.errorMessage;
@@ -179,6 +187,9 @@ export class AppComponent implements OnInit{
           console.log(data.loginId)
           this.authService.loggedInUserId = data.loginId;
           this.router.navigate(['/tweet']);
+
+        } else {
+          alert("Invalid Credentials");
         }
       },
       (responseError) => {

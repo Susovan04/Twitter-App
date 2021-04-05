@@ -40,8 +40,12 @@ export class PasswordResetComponent implements OnInit {
     console.log(this.passwordResetForm.value);
     this.passwordReset(this.passwordResetForm.get("newPwd").value).subscribe(
       (response) => {
-        console.log("success");
-        alert('Password Reset Successfully! Please login');
+        console.log(response);
+        if(response) {
+          alert('Password Reset Successfully! Please login');
+        } else {
+          alert("Error Occured! Try Again");
+        }
       },
       (responseError) => {
         this.error = responseError.error.errorMessage;

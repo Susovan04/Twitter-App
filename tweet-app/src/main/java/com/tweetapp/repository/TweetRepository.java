@@ -10,8 +10,7 @@ import com.tweetapp.model.TweetData;
 
 @Repository
 public interface TweetRepository extends MongoRepository<TweetData, UUID>{
-
+	
 	List<TweetData> findByUserName(String userName);
-
 
 }

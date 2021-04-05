@@ -47,13 +47,17 @@ export class TweetComponent implements OnInit {
     console.log(this.postTweetForm.value);
     this.postTweet(this.postTweetForm.get("tweet").value).subscribe(
       (response) => {
-        console.log("tweet posted");
-        this.getAllTweets().subscribe(
-          (response) => {
-            console.log(response);
-            this.tweets = response;
-          }
-        );
+        if(response) {
+          console.log("tweet posted");
+          this.getAllTweets().subscribe(
+            (response) => {
+              console.log(response);
+              this.tweets = response;
+            }
+          );
+        } else {
+          alert("Error Occured. Can't post tweet")
+        }
       }
     );
     this.postTweetForm.reset();
@@ -69,12 +73,16 @@ export class TweetComponent implements OnInit {
     this.postReply(this.tweetReplyForm.get("reply").value).subscribe(
       (response) => {
         console.log(response);
-        this.getAllTweets().subscribe(
-          (response) => {
-            console.log(response);
-            this.tweets = response;
-          }
-        );
+        if(response) {
+          this.getAllTweets().subscribe(
+            (response) => {
+              console.log(response);
+              this.tweets = response;
+            }
+          );
+        } else {
+          alert("Error Occured while adding reply");
+        }       
       }
     );
     this.tweetReplyForm.reset();

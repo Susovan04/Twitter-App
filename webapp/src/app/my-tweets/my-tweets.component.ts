@@ -42,12 +42,16 @@ export class MyTweetsComponent implements OnInit {
     this.postReply(this.tweetReplyForm.get("reply").value).subscribe(
       (response) => {
         console.log(response);
-        this.getAllMyTweets().subscribe(
-          (response) => {
-            console.log(response);
-            this.tweets = response;
-          }
-        );
+        if(response) {
+          this.getAllMyTweets().subscribe(
+            (response) => {
+              console.log(response);
+              this.tweets = response;
+            }
+          );
+        } else {
+          alert("Error Occured while adding reply");
+        }
       }
     );
     this.tweetReplyForm.reset();

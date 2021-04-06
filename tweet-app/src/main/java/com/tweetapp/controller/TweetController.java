@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,6 +30,8 @@ public class TweetController {
 	@Autowired
 	UserRepository userRepository;
 	
+	@Autowired
+	KafkaTemplate<String, String> kafkaTemplate;
 	
 	@PutMapping("/{username}/reset")
 	public boolean resetPassword(@PathVariable("username") String username, @RequestBody String newPassword) {
@@ -44,6 +47,7 @@ public class TweetController {
 	@PostMapping("/{username}/add")
 	public boolean postTweet(@PathVariable("username") String username, @RequestBody String tweetData) {
 		boolean status = tweetService.processTweetPost(username, tweetData); 
+		kafkaTemplate.send("Tweet", tweetData);
 		return status;
 	}
 	
@@ -55,7 +59,8 @@ public class TweetController {
 	
 	@PostMapping("/{username}/reply/{id}")
 	public boolean addReply(@PathVariable("username") String userName, @PathVariable("id") UUID tweetId, @RequestBody String replyData) {
-		boolean status = tweetService.processAddReply(userName, tweetId, replyData);	
+		boolean status = tweetService.processAddReply(userName, tweetId, replyData);
+		kafkaTemplate.send("Reply", replyData);
 		return status;
 	}
 	

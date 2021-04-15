@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
@@ -54,7 +54,13 @@ export class PasswordResetComponent implements OnInit {
   }
 
   passwordReset(password: string) : Observable<Object> {
-    return this.http.put(environment.baseUrl+this.authService.loggedInUserId+"/reset",password);
+    const httpOptions={
+      headers:new HttpHeaders({
+        'content-type':'application/json',
+        'Authorization':'Bearer ' + this.authService.getToken()
+      })
+    };
+    return this.http.put(environment.baseUrl+this.authService.loggedInUserId+"/reset",password,httpOptions);
   }
 
 }

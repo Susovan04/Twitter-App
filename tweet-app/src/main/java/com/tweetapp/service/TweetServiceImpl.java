@@ -7,7 +7,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.tweetapp.model.Replies;
@@ -24,14 +28,19 @@ public class TweetServiceImpl implements TweetService {
 	
 	@Autowired
 	TweetRepository tweetRepository;
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(TweetServiceImpl.class);
 
 	@Override
 	public boolean processResetPassword(String username, String newPassword) {
 		Optional<UserDetails> user = userRepository.findById(username);
-		user.get().setPassword(newPassword);
+		user.get().setPassword(passwordEncoder().encode(newPassword));
 		UserDetails savedUser = userRepository.save(user.get());
-		if(savedUser.getLoginId() != null)
+		if(savedUser.getLoginId() != null) {
+			LOGGER.info("Password Reset Successfully");
 			return true;
+		}
+		LOGGER.error("Error Occured in Password Reset");
 		return false;
 	}
 
@@ -45,8 +54,11 @@ public class TweetServiceImpl implements TweetService {
 	    tweet.setTweet(tweetData);
 	    tweet.setId(UUID.randomUUID());	    
 	    TweetData postedTweet = tweetRepository.insert(tweet);
-	    if(postedTweet.getId() != null)
+	    if(postedTweet.getId() != null) {
+	    	LOGGER.info("Tweet Posted Successfully");
 	    	return true;
+	    }
+	    LOGGER.error("Error in Tweet Post");
 	    return false;
 	}
 	
@@ -79,8 +91,11 @@ public class TweetServiceImpl implements TweetService {
 		tweet.get().getReplies().add(reply);
 		TweetData savedTweet = tweetRepository.save(tweet.get());
 		
-		if(savedTweet.getId() != null)
+		if(savedTweet.getId() != null) {
+			LOGGER.info("Reply added Successfully");
 			return true;
+		}
+		LOGGER.error("Error in Tweet Reply");
 		return false;
 	}
 	
@@ -147,5 +162,9 @@ public class TweetServiceImpl implements TweetService {
 			e.printStackTrace();
 		}
 		 return "Error fetching time";
+	}
+	
+	private PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
 	}
 }

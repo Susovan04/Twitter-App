@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
@@ -58,7 +58,13 @@ export class MyTweetsComponent implements OnInit {
   }
 
   postReply(reply: string) : Observable<Object>{
-    return this.http.post(environment.baseUrl+this.authService.loggedInUserId+"/reply/"+this.tweetId,reply);
+    const httpOptions={
+      headers:new HttpHeaders({
+        'content-type':'application/json',
+        'Authorization':'Bearer ' + this.authService.getToken()
+      })
+    };
+    return this.http.post(environment.baseUrl+this.authService.loggedInUserId+"/reply/"+this.tweetId,reply,httpOptions);
   }
 
   showModal(id : string) {
@@ -67,7 +73,13 @@ export class MyTweetsComponent implements OnInit {
   }
 
   getAllMyTweets() : Observable<any[]> {
-    return this.http.get<Tweet[]>(environment.baseUrl+this.authService.loggedInUserId);
+    const httpOptions={
+      headers:new HttpHeaders({
+        'content-type':'application/json',
+        'Authorization':'Bearer ' + this.authService.getToken()
+      })
+    };
+    return this.http.get<Tweet[]>(environment.baseUrl+this.authService.loggedInUserId,httpOptions);
   }
 
 }

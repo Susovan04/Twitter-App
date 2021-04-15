@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { AuthServiceService } from '../services/auth-service.service';
 import { User } from '../user/user';
 
 @Component({
@@ -13,7 +14,7 @@ export class ViewUserComponent implements OnInit {
 
   users : User[];
 
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient, private authService : AuthServiceService) { }
 
   ngOnInit(){
       this.getAllUsers().subscribe(
@@ -24,7 +25,13 @@ export class ViewUserComponent implements OnInit {
       );
       }
       getAllUsers() : Observable<any[]> {
-        return this.http.get<User[]>(environment.baseUrl+"users/all");
+        const httpOptions={
+          headers:new HttpHeaders({
+            'content-type':'application/json',
+            'Authorization':'Bearer ' + this.authService.getToken()
+          })
+        };
+        return this.http.get<User[]>(environment.baseUrl+"users/all",httpOptions);
       }
 }
 

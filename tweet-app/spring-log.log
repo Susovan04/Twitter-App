@@ -1,0 +1,779 @@
+2021-04-15 21:11:38.798  INFO 9088 --- [restartedMain] com.tweetapp.TweetAppApplication         : Starting TweetAppApplication using Java 1.8.0_201 on Lab-637519927065555442-1 with PID 9088 (C:\Users\User\Desktop\tweet-app-component2\tweet-app-backend\target\classes started by User in C:\Users\User\Desktop\tweet-app-component2\tweet-app-backend)
+2021-04-15 21:11:38.802  INFO 9088 --- [restartedMain] com.tweetapp.TweetAppApplication         : No active profile set, falling back to default profiles: default
+2021-04-15 21:11:38.888  INFO 9088 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-15 21:11:38.890  INFO 9088 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-15 21:11:39.853  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-04-15 21:11:39.912  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 2 MongoDB repository interfaces.
+2021-04-15 21:11:40.469  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8092 (http)
+2021-04-15 21:11:40.477  INFO 9088 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-15 21:11:40.478  INFO 9088 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-15 21:11:40.536  INFO 9088 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-15 21:11:40.536  INFO 9088 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1645 ms
+2021-04-15 21:11:40.865  INFO 9088 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-04-15 21:11:40.920  INFO 9088 --- [cluster-ClusterId{value='60785eb4854579487ad92ee8', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:33}] to localhost:27017
+2021-04-15 21:11:40.921  INFO 9088 --- [cluster-ClusterId{value='60785eb4854579487ad92ee8', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=16576201}
+2021-04-15 21:11:40.932  INFO 9088 --- [cluster-rtt-ClusterId{value='60785eb4854579487ad92ee8', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:34}] to localhost:27017
+2021-04-15 21:11:41.072  INFO 9088 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-15 21:11:41.587  INFO 9088 --- [restartedMain] c.t.security.JwtAuthorizationFilter      : org.springframework.security.authentication.ProviderManager@20812074: 
+2021-04-15 21:11:41.909  INFO 9088 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-15 21:11:41.932  INFO 9088 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d6b560e, org.springframework.security.web.context.SecurityContextPersistenceFilter@1ce8f1a4, org.springframework.security.web.header.HeaderWriterFilter@7a4c6227, org.springframework.web.filter.CorsFilter@526c5b4d, org.springframework.security.web.authentication.logout.LogoutFilter@4fabafdc, com.tweetapp.security.JwtAuthorizationFilter@26ff3554, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@576ae41b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@74c5c529, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5473185f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d5321be, org.springframework.security.web.session.SessionManagementFilter@f56748a, org.springframework.security.web.access.ExceptionTranslationFilter@79e3e678, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@b2f475f]
+2021-04-15 21:11:41.978  INFO 9088 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-15 21:11:42.234  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8092 (http) with context path ''
+2021-04-15 21:11:42.252  INFO 9088 --- [restartedMain] com.tweetapp.TweetAppApplication         : Started TweetAppApplication in 3.857 seconds (JVM running for 4.625)
+2021-04-15 21:12:05.890  INFO 9088 --- [http-nio-8092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-15 21:12:05.891  INFO 9088 --- [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-15 21:12:05.893  INFO 9088 --- [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-04-15 21:12:05.927  INFO 9088 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : Basic cmFtOjEyMzQ1Ng==
+2021-04-15 21:12:06.109  INFO 9088 --- [http-nio-8092-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:35}] to localhost:27017
+2021-04-15 21:12:06.181  INFO 9088 --- [http-nio-8092-exec-1] c.t.controller.AuthenticationController  : User -> ram
+2021-04-15 21:12:06.551  INFO 9088 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW0iLCJpYXQiOjE2MTg1MDEzMjYsImV4cCI6MTYxODUwMjUyNn0.WL96vNO_u6Ej63XR36FGdHCY02FdDhBtq398aO1aCLo
+2021-04-15 21:12:06.620  INFO 9088 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : ram
+2021-04-15 21:13:34.737  INFO 9088 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-15 21:13:34.746  INFO 9088 --- [Thread-5] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:3, serverValue:35}] to localhost:27017 because the pool has been closed.
+2021-04-15 21:13:34.959  INFO 9088 --- [restartedMain] com.tweetapp.TweetAppApplication         : Starting TweetAppApplication using Java 1.8.0_201 on Lab-637519927065555442-1 with PID 9088 (C:\Users\User\Desktop\tweet-app-component2\tweet-app-backend\target\classes started by User in C:\Users\User\Desktop\tweet-app-component2\tweet-app-backend)
+2021-04-15 21:13:34.960  INFO 9088 --- [restartedMain] com.tweetapp.TweetAppApplication         : No active profile set, falling back to default profiles: default
+2021-04-15 21:13:35.303  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-04-15 21:13:35.319  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 2 MongoDB repository interfaces.
+2021-04-15 21:13:35.431  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8092 (http)
+2021-04-15 21:13:35.434  INFO 9088 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-15 21:13:35.434  INFO 9088 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-15 21:13:35.444  INFO 9088 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-15 21:13:35.444  INFO 9088 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 471 ms
+2021-04-15 21:13:35.498  WARN 9088 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [E77EAF6000616D261293417A8BB27E4F]
+2021-04-15 21:13:35.518  INFO 9088 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-04-15 21:13:35.540  INFO 9088 --- [cluster-ClusterId{value='60785f27854579487ad92ee9', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:36}] to localhost:27017
+2021-04-15 21:13:35.542  INFO 9088 --- [cluster-ClusterId{value='60785f27854579487ad92ee9', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=12678201}
+2021-04-15 21:13:35.550  INFO 9088 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-15 21:13:35.553  INFO 9088 --- [cluster-rtt-ClusterId{value='60785f27854579487ad92ee9', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:37}] to localhost:27017
+2021-04-15 21:13:35.636  INFO 9088 --- [restartedMain] c.t.security.JwtAuthorizationFilter      : org.springframework.security.authentication.ProviderManager@1b73af72: 
+2021-04-15 21:13:35.753  INFO 9088 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-15 21:13:35.761  INFO 9088 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@51a694b7, org.springframework.security.web.context.SecurityContextPersistenceFilter@5b7039b2, org.springframework.security.web.header.HeaderWriterFilter@1004a7d0, org.springframework.web.filter.CorsFilter@30b74a1a, org.springframework.security.web.authentication.logout.LogoutFilter@63611e12, com.tweetapp.security.JwtAuthorizationFilter@49b3daf5, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2eb2f7fa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@736ef330, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46e1f0aa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f417564, org.springframework.security.web.session.SessionManagementFilter@70f1ed32, org.springframework.security.web.access.ExceptionTranslationFilter@5dcebf0b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4fe12aa5]
+2021-04-15 21:13:35.776  INFO 9088 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-15 21:13:35.859  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8092 (http) with context path ''
+2021-04-15 21:13:35.870  INFO 9088 --- [restartedMain] com.tweetapp.TweetAppApplication         : Started TweetAppApplication in 0.944 seconds (JVM running for 118.243)
+2021-04-15 21:13:35.875  INFO 9088 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-15 21:13:48.819  INFO 9088 --- [http-nio-8092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-15 21:13:48.820  INFO 9088 --- [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-15 21:13:48.822  INFO 9088 --- [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-04-15 21:13:48.827  INFO 9088 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : Basic cmFtOjEyMzQ1Ng==
+2021-04-15 21:13:48.958  INFO 9088 --- [http-nio-8092-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:38}] to localhost:27017
+2021-04-15 21:13:48.975  INFO 9088 --- [http-nio-8092-exec-1] c.t.controller.AuthenticationController  : User -> ram
+2021-04-15 21:13:49.028  INFO 9088 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW0iLCJpYXQiOjE2MTg1MDE0MjgsImV4cCI6MTYxODUwMjYyOH0.3RMLqBhQsbhJVxHTY-CPEtwiW_JBmBTrTqOL8P6pvQ0
+2021-04-15 21:13:49.031  INFO 9088 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : ram
+2021-04-15 21:14:08.703  INFO 9088 --- [Thread-9] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-15 21:14:08.706  INFO 9088 --- [Thread-9] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:6, serverValue:38}] to localhost:27017 because the pool has been closed.
+2021-04-15 21:14:08.923  INFO 9088 --- [restartedMain] com.tweetapp.TweetAppApplication         : Starting TweetAppApplication using Java 1.8.0_201 on Lab-637519927065555442-1 with PID 9088 (C:\Users\User\Desktop\tweet-app-component2\tweet-app-backend\target\classes started by User in C:\Users\User\Desktop\tweet-app-component2\tweet-app-backend)
+2021-04-15 21:14:08.923  INFO 9088 --- [restartedMain] com.tweetapp.TweetAppApplication         : No active profile set, falling back to default profiles: default
+2021-04-15 21:14:09.233  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-04-15 21:14:09.247  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 2 MongoDB repository interfaces.
+2021-04-15 21:14:09.351  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8092 (http)
+2021-04-15 21:14:09.352  INFO 9088 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-15 21:14:09.352  INFO 9088 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-15 21:14:09.390  INFO 9088 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-15 21:14:09.390  INFO 9088 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 465 ms
+2021-04-15 21:14:09.433  WARN 9088 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [26D2AB2931209F321D4D0F067F6F9457]
+2021-04-15 21:14:09.438 ERROR 9088 --- [restartedMain] o.a.catalina.session.StandardManager     : Exception loading sessions from persistent storage
+
+java.io.StreamCorruptedException: invalid type code: 00
+	at java.io.ObjectInputStream.readObject0(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.defaultReadFields(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.defaultReadObject(Unknown Source) ~[na:1.8.0_201]
+	at java.lang.Throwable.readObject(Unknown Source) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectStreamClass.invokeReadObject(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.readSerialData(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.readOrdinaryObject(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.readObject0(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.readObject(Unknown Source) ~[na:1.8.0_201]
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1545) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1040) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:218) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:354) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5194) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_201]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source) [na:1.8.0_201]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_201]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source) [na:1.8.0_201]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577) [spring-context-5.3.5.jar:5.3.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) [spring-boot-2.4.4.jar:2.4.4]
+	at com.tweetapp.TweetAppApplication.main(TweetAppApplication.java:10) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_201]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.4.4.jar:2.4.4]
+
+2021-04-15 21:14:09.456  INFO 9088 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-04-15 21:14:09.476  INFO 9088 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-15 21:14:09.478  INFO 9088 --- [cluster-ClusterId{value='60785f49854579487ad92eea', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:39}] to localhost:27017
+2021-04-15 21:14:09.483  INFO 9088 --- [cluster-ClusterId{value='60785f49854579487ad92eea', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=14141599}
+2021-04-15 21:14:09.484  INFO 9088 --- [cluster-rtt-ClusterId{value='60785f49854579487ad92eea', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:8, serverValue:40}] to localhost:27017
+2021-04-15 21:14:09.563  INFO 9088 --- [restartedMain] c.t.security.JwtAuthorizationFilter      : org.springframework.security.authentication.ProviderManager@236b0fa0: 
+2021-04-15 21:14:09.680  INFO 9088 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-15 21:14:09.687  INFO 9088 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@79f57c4a, org.springframework.security.web.context.SecurityContextPersistenceFilter@4f44e53b, org.springframework.security.web.header.HeaderWriterFilter@11ee97b, org.springframework.web.filter.CorsFilter@4350c6a5, org.springframework.security.web.authentication.logout.LogoutFilter@2996a418, com.tweetapp.security.JwtAuthorizationFilter@4cc6fa09, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4f414746, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f25f49, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@73513bbd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62204b2a, org.springframework.security.web.session.SessionManagementFilter@433e39c2, org.springframework.security.web.access.ExceptionTranslationFilter@7dc6f745, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7f8a385b]
+2021-04-15 21:14:09.697  INFO 9088 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-15 21:14:09.797  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8092 (http) with context path ''
+2021-04-15 21:14:09.806  INFO 9088 --- [restartedMain] com.tweetapp.TweetAppApplication         : Started TweetAppApplication in 0.913 seconds (JVM running for 152.179)
+2021-04-15 21:14:09.814  INFO 9088 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-15 21:18:00.519  INFO 9088 --- [http-nio-8092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-15 21:18:00.520  INFO 9088 --- [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-15 21:18:00.523  INFO 9088 --- [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-04-15 21:18:00.525  INFO 9088 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : Basic bWFuYWI6MTIzNDU2
+2021-04-15 21:18:00.648  INFO 9088 --- [http-nio-8092-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:9, serverValue:41}] to localhost:27017
+2021-04-15 21:18:00.664  INFO 9088 --- [http-nio-8092-exec-1] c.t.controller.AuthenticationController  : User -> manab
+2021-04-15 21:18:00.718  INFO 9088 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hYiIsImlhdCI6MTYxODUwMTY4MCwiZXhwIjoxNjE4NTAyODgwfQ.iI5P4mOjpRqqhRS6pN5sFyfkxeEU7Fpyzp2a3lFmY38
+2021-04-15 21:18:00.720  INFO 9088 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : manab
+2021-04-15 21:18:20.275  INFO 9088 --- [http-nio-8092-exec-4] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hYiIsImlhdCI6MTYxODUwMTY4MCwiZXhwIjoxNjE4NTAyODgwfQ.iI5P4mOjpRqqhRS6pN5sFyfkxeEU7Fpyzp2a3lFmY38
+2021-04-15 21:18:20.276  INFO 9088 --- [http-nio-8092-exec-4] c.t.security.JwtAuthorizationFilter      : manab
+2021-04-15 21:18:20.324  INFO 9088 --- [http-nio-8092-exec-4] com.tweetapp.service.TweetServiceImpl    : Reply added Successfully
+2021-04-15 21:18:20.348  INFO 9088 --- [http-nio-8092-exec-4] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	internal.auto.downgrade.txn.commit = true
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2021-04-15 21:18:20.408  INFO 9088 --- [http-nio-8092-exec-4] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.6.0
+2021-04-15 21:18:20.408  INFO 9088 --- [http-nio-8092-exec-4] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 62abe01bee039651
+2021-04-15 21:18:20.408  INFO 9088 --- [http-nio-8092-exec-4] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1618501700406
+2021-04-15 21:18:20.716  INFO 9088 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: _b5czvdiSFCyqgFeG7aZkA
+2021-04-15 21:18:20.904  INFO 9088 --- [http-nio-8092-exec-5] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hYiIsImlhdCI6MTYxODUwMTY4MCwiZXhwIjoxNjE4NTAyODgwfQ.iI5P4mOjpRqqhRS6pN5sFyfkxeEU7Fpyzp2a3lFmY38
+2021-04-15 21:18:20.905  INFO 9088 --- [http-nio-8092-exec-5] c.t.security.JwtAuthorizationFilter      : manab
+2021-04-15 21:18:47.372  INFO 9088 --- [http-nio-8092-exec-8] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hYiIsImlhdCI6MTYxODUwMTY4MCwiZXhwIjoxNjE4NTAyODgwfQ.iI5P4mOjpRqqhRS6pN5sFyfkxeEU7Fpyzp2a3lFmY38
+2021-04-15 21:18:47.374  INFO 9088 --- [http-nio-8092-exec-8] c.t.security.JwtAuthorizationFilter      : manab
+2021-04-15 21:18:47.384  INFO 9088 --- [http-nio-8092-exec-8] com.tweetapp.service.TweetServiceImpl    : Reply added Successfully
+2021-04-15 21:18:47.410  INFO 9088 --- [http-nio-8092-exec-9] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hYiIsImlhdCI6MTYxODUwMTY4MCwiZXhwIjoxNjE4NTAyODgwfQ.iI5P4mOjpRqqhRS6pN5sFyfkxeEU7Fpyzp2a3lFmY38
+2021-04-15 21:18:47.412  INFO 9088 --- [http-nio-8092-exec-9] c.t.security.JwtAuthorizationFilter      : manab
+2021-04-15 21:19:06.800  INFO 9088 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hYiIsImlhdCI6MTYxODUwMTY4MCwiZXhwIjoxNjE4NTAyODgwfQ.iI5P4mOjpRqqhRS6pN5sFyfkxeEU7Fpyzp2a3lFmY38
+2021-04-15 21:19:06.802  INFO 9088 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : manab
+2021-04-15 21:19:06.821  INFO 9088 --- [http-nio-8092-exec-1] com.tweetapp.service.TweetServiceImpl    : Tweet Posted Successfully
+2021-04-15 21:19:06.865  INFO 9088 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hYiIsImlhdCI6MTYxODUwMTY4MCwiZXhwIjoxNjE4NTAyODgwfQ.iI5P4mOjpRqqhRS6pN5sFyfkxeEU7Fpyzp2a3lFmY38
+2021-04-15 21:19:06.866  INFO 9088 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : manab
+2021-04-15 21:19:38.165  INFO 9088 --- [http-nio-8092-exec-5] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hYiIsImlhdCI6MTYxODUwMTY4MCwiZXhwIjoxNjE4NTAyODgwfQ.iI5P4mOjpRqqhRS6pN5sFyfkxeEU7Fpyzp2a3lFmY38
+2021-04-15 21:19:38.166  INFO 9088 --- [http-nio-8092-exec-5] c.t.security.JwtAuthorizationFilter      : manab
+2021-04-15 21:19:48.385  INFO 9088 --- [http-nio-8092-exec-8] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hYiIsImlhdCI6MTYxODUwMTY4MCwiZXhwIjoxNjE4NTAyODgwfQ.iI5P4mOjpRqqhRS6pN5sFyfkxeEU7Fpyzp2a3lFmY38
+2021-04-15 21:19:48.386  INFO 9088 --- [http-nio-8092-exec-8] c.t.security.JwtAuthorizationFilter      : manab
+2021-04-15 21:20:02.207  INFO 9088 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hYiIsImlhdCI6MTYxODUwMTY4MCwiZXhwIjoxNjE4NTAyODgwfQ.iI5P4mOjpRqqhRS6pN5sFyfkxeEU7Fpyzp2a3lFmY38
+2021-04-15 21:20:02.209  INFO 9088 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : manab
+2021-04-15 21:20:02.216  INFO 9088 --- [http-nio-8092-exec-1] com.tweetapp.service.TweetServiceImpl    : Reply added Successfully
+2021-04-15 21:20:02.243  INFO 9088 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hYiIsImlhdCI6MTYxODUwMTY4MCwiZXhwIjoxNjE4NTAyODgwfQ.iI5P4mOjpRqqhRS6pN5sFyfkxeEU7Fpyzp2a3lFmY38
+2021-04-15 21:20:02.244  INFO 9088 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : manab
+2021-04-15 21:20:11.101  INFO 9088 --- [http-nio-8092-exec-4] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hYiIsImlhdCI6MTYxODUwMTY4MCwiZXhwIjoxNjE4NTAyODgwfQ.iI5P4mOjpRqqhRS6pN5sFyfkxeEU7Fpyzp2a3lFmY38
+2021-04-15 21:20:11.103  INFO 9088 --- [http-nio-8092-exec-4] c.t.security.JwtAuthorizationFilter      : manab
+2021-04-15 21:20:45.227  INFO 9088 --- [http-nio-8092-exec-7] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hYiIsImlhdCI6MTYxODUwMTY4MCwiZXhwIjoxNjE4NTAyODgwfQ.iI5P4mOjpRqqhRS6pN5sFyfkxeEU7Fpyzp2a3lFmY38
+2021-04-15 21:20:45.228  INFO 9088 --- [http-nio-8092-exec-7] c.t.security.JwtAuthorizationFilter      : manab
+2021-04-15 21:20:45.244  INFO 9088 --- [http-nio-8092-exec-7] com.tweetapp.service.TweetServiceImpl    : Password Reset Successfully
+2021-04-15 21:21:31.214  INFO 9088 --- [http-nio-8092-exec-9] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hYiIsImlhdCI6MTYxODUwMTY4MCwiZXhwIjoxNjE4NTAyODgwfQ.iI5P4mOjpRqqhRS6pN5sFyfkxeEU7Fpyzp2a3lFmY38
+2021-04-15 21:21:31.216  INFO 9088 --- [http-nio-8092-exec-9] c.t.security.JwtAuthorizationFilter      : manab
+2021-04-15 21:22:04.672  INFO 9088 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : Basic cmFtOjEyMzQ1Ng==
+2021-04-15 21:22:04.679  INFO 9088 --- [http-nio-8092-exec-1] c.t.controller.AuthenticationController  : User -> ram
+2021-04-15 21:22:04.733  INFO 9088 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW0iLCJpYXQiOjE2MTg1MDE5MjQsImV4cCI6MTYxODUwMzEyNH0.pGjkktOzHt0GMqOXA5yoE_MJLTvj34FxS2m4awZ3J3Y
+2021-04-15 21:22:04.734  INFO 9088 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : ram
+2021-04-15 21:35:19.329  INFO 9088 --- [Thread-14] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-15 21:35:19.331  INFO 9088 --- [Thread-14] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2021-04-15 21:35:19.337  INFO 9088 --- [Thread-14] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:9, serverValue:41}] to localhost:27017 because the pool has been closed.
+2021-04-15 21:35:19.631  INFO 9088 --- [restartedMain] com.tweetapp.TweetAppApplication         : Starting TweetAppApplication using Java 1.8.0_201 on Lab-637519927065555442-1 with PID 9088 (C:\Users\User\Desktop\tweet-app-component2\tweet-app-backend\target\classes started by User in C:\Users\User\Desktop\tweet-app-component2\tweet-app-backend)
+2021-04-15 21:35:19.631  INFO 9088 --- [restartedMain] com.tweetapp.TweetAppApplication         : No active profile set, falling back to default profiles: default
+2021-04-15 21:35:20.047  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-04-15 21:35:20.062  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 2 MongoDB repository interfaces.
+2021-04-15 21:35:20.224  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8092 (http)
+2021-04-15 21:35:20.225  INFO 9088 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-15 21:35:20.225  INFO 9088 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-15 21:35:20.242  INFO 9088 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-15 21:35:20.242  INFO 9088 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 608 ms
+2021-04-15 21:35:20.322  WARN 9088 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [07B96DB65C9D45BBE9CA38D7AEFF9898]
+2021-04-15 21:35:20.324 ERROR 9088 --- [restartedMain] o.a.catalina.session.StandardManager     : Exception loading sessions from persistent storage
+
+java.io.StreamCorruptedException: invalid type code: 00
+	at java.io.ObjectInputStream.readObject0(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.defaultReadFields(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.defaultReadObject(Unknown Source) ~[na:1.8.0_201]
+	at java.lang.Throwable.readObject(Unknown Source) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectStreamClass.invokeReadObject(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.readSerialData(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.readOrdinaryObject(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.readObject0(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.readObject(Unknown Source) ~[na:1.8.0_201]
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1545) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1040) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:218) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:354) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5194) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_201]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source) [na:1.8.0_201]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_201]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source) [na:1.8.0_201]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577) [spring-context-5.3.5.jar:5.3.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) [spring-boot-2.4.4.jar:2.4.4]
+	at com.tweetapp.TweetAppApplication.main(TweetAppApplication.java:10) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_201]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.4.4.jar:2.4.4]
+
+2021-04-15 21:35:20.337  INFO 9088 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-04-15 21:35:20.361  INFO 9088 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-15 21:35:20.362  INFO 9088 --- [cluster-rtt-ClusterId{value='60786440854579487ad92eeb', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:11, serverValue:44}] to localhost:27017
+2021-04-15 21:35:20.365  INFO 9088 --- [cluster-ClusterId{value='60786440854579487ad92eeb', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:10, serverValue:45}] to localhost:27017
+2021-04-15 21:35:20.366  INFO 9088 --- [cluster-ClusterId{value='60786440854579487ad92eeb', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4580800}
+2021-04-15 21:35:20.467  INFO 9088 --- [restartedMain] c.t.security.JwtAuthorizationFilter      : org.springframework.security.authentication.ProviderManager@28639c9a: 
+2021-04-15 21:35:20.579  INFO 9088 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-15 21:35:20.591  INFO 9088 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56496774, org.springframework.security.web.context.SecurityContextPersistenceFilter@7973761b, org.springframework.security.web.header.HeaderWriterFilter@5a209a75, org.springframework.web.filter.CorsFilter@482cfc8, org.springframework.security.web.authentication.logout.LogoutFilter@7724b3a8, com.tweetapp.security.JwtAuthorizationFilter@4d78bfcb, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6601b086, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67d487f4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39794a49, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4fd0ea40, org.springframework.security.web.session.SessionManagementFilter@6c58011a, org.springframework.security.web.access.ExceptionTranslationFilter@15016716, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@651cf6c2]
+2021-04-15 21:35:20.604  INFO 9088 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-15 21:35:20.715  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8092 (http) with context path ''
+2021-04-15 21:35:20.724  INFO 9088 --- [restartedMain] com.tweetapp.TweetAppApplication         : Started TweetAppApplication in 1.129 seconds (JVM running for 1423.097)
+2021-04-15 21:35:20.727  INFO 9088 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-15 21:35:37.196  INFO 9088 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-04-15 21:35:37.266  INFO 9088 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-15 21:45:50.609  INFO 7108 --- [restartedMain] com.tweetapp.TweetAppApplication         : Starting TweetAppApplication using Java 1.8.0_201 on Lab-637519927065555442-1 with PID 7108 (C:\Users\User\Desktop\tweet-app-component2\tweet-app-backend\target\classes started by User in C:\Users\User\Desktop\tweet-app-component2\tweet-app-backend)
+2021-04-15 21:45:50.612  INFO 7108 --- [restartedMain] com.tweetapp.TweetAppApplication         : No active profile set, falling back to default profiles: default
+2021-04-15 21:45:50.689  INFO 7108 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-15 21:45:50.690  INFO 7108 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-15 21:45:51.729  INFO 7108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-04-15 21:45:51.792  INFO 7108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 2 MongoDB repository interfaces.
+2021-04-15 21:45:52.318  INFO 7108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8092 (http)
+2021-04-15 21:45:52.327  INFO 7108 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-15 21:45:52.327  INFO 7108 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-15 21:45:52.388  INFO 7108 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-15 21:45:52.388  INFO 7108 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1696 ms
+2021-04-15 21:45:52.738  INFO 7108 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-04-15 21:45:52.801  INFO 7108 --- [cluster-rtt-ClusterId{value='607866b849aead75ead07dd8', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:46}] to localhost:27017
+2021-04-15 21:45:52.803  INFO 7108 --- [cluster-ClusterId{value='607866b849aead75ead07dd8', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:47}] to localhost:27017
+2021-04-15 21:45:52.804  INFO 7108 --- [cluster-ClusterId{value='607866b849aead75ead07dd8', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=23717300}
+2021-04-15 21:45:52.945  INFO 7108 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-15 21:45:53.472  INFO 7108 --- [restartedMain] c.t.security.JwtAuthorizationFilter      : org.springframework.security.authentication.ProviderManager@35db9661: 
+2021-04-15 21:45:53.778  INFO 7108 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-15 21:45:53.807  INFO 7108 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7c17c0e0, org.springframework.security.web.context.SecurityContextPersistenceFilter@38b697bf, org.springframework.security.web.header.HeaderWriterFilter@715785cf, org.springframework.web.filter.CorsFilter@10213c9c, org.springframework.security.web.authentication.logout.LogoutFilter@424197a7, com.tweetapp.security.JwtAuthorizationFilter@2bfc48e2, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@30fbb5c8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15b14ce0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7352fc75, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d185a76, org.springframework.security.web.session.SessionManagementFilter@32ddf1a8, org.springframework.security.web.access.ExceptionTranslationFilter@1145a31a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@601f71c7]
+2021-04-15 21:45:53.852  INFO 7108 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-15 21:45:54.070  INFO 7108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8092 (http) with context path ''
+2021-04-15 21:45:54.086  INFO 7108 --- [restartedMain] com.tweetapp.TweetAppApplication         : Started TweetAppApplication in 3.943 seconds (JVM running for 4.8)
+2021-04-15 21:47:02.883  INFO 7108 --- [http-nio-8092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-15 21:47:02.884  INFO 7108 --- [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-15 21:47:02.886  INFO 7108 --- [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-04-15 21:47:02.948  INFO 7108 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : Basic cmFtOjEyMzQ1Ng==
+2021-04-15 21:47:03.141  INFO 7108 --- [http-nio-8092-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:48}] to localhost:27017
+2021-04-15 21:47:03.221  INFO 7108 --- [http-nio-8092-exec-1] c.t.controller.AuthenticationController  : User -> ram
+2021-04-15 21:47:03.679  INFO 7108 --- [http-nio-8092-exec-3] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW0iLCJpYXQiOjE2MTg1MDM0MjMsImV4cCI6MTYxODUwNDYyM30.EcsfF9nAQFWjp8AP2FnvtwIgrvWiyxdPqHyr79Jhrhc
+2021-04-15 21:47:03.716  INFO 7108 --- [http-nio-8092-exec-3] c.t.security.JwtAuthorizationFilter      : ram
+2021-04-15 21:47:16.558  INFO 7108 --- [http-nio-8092-exec-6] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW0iLCJpYXQiOjE2MTg1MDM0MjMsImV4cCI6MTYxODUwNDYyM30.EcsfF9nAQFWjp8AP2FnvtwIgrvWiyxdPqHyr79Jhrhc
+2021-04-15 21:47:16.560  INFO 7108 --- [http-nio-8092-exec-6] c.t.security.JwtAuthorizationFilter      : ram
+2021-04-15 21:47:16.601  INFO 7108 --- [http-nio-8092-exec-6] com.tweetapp.service.TweetServiceImpl    : Tweet Posted Successfully
+2021-04-15 21:47:16.619  INFO 7108 --- [http-nio-8092-exec-6] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	internal.auto.downgrade.txn.commit = true
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2021-04-15 21:47:16.680  INFO 7108 --- [http-nio-8092-exec-6] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.6.0
+2021-04-15 21:47:16.681  INFO 7108 --- [http-nio-8092-exec-6] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 62abe01bee039651
+2021-04-15 21:47:16.681  INFO 7108 --- [http-nio-8092-exec-6] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1618503436679
+2021-04-15 21:47:16.994  INFO 7108 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: _b5czvdiSFCyqgFeG7aZkA
+2021-04-15 21:47:17.049  INFO 7108 --- [http-nio-8092-exec-7] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW0iLCJpYXQiOjE2MTg1MDM0MjMsImV4cCI6MTYxODUwNDYyM30.EcsfF9nAQFWjp8AP2FnvtwIgrvWiyxdPqHyr79Jhrhc
+2021-04-15 21:47:17.052  INFO 7108 --- [http-nio-8092-exec-7] c.t.security.JwtAuthorizationFilter      : ram
+2021-04-15 21:47:28.310  INFO 7108 --- [http-nio-8092-exec-10] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW0iLCJpYXQiOjE2MTg1MDM0MjMsImV4cCI6MTYxODUwNDYyM30.EcsfF9nAQFWjp8AP2FnvtwIgrvWiyxdPqHyr79Jhrhc
+2021-04-15 21:47:28.312  INFO 7108 --- [http-nio-8092-exec-10] c.t.security.JwtAuthorizationFilter      : ram
+2021-04-15 21:47:28.340  INFO 7108 --- [http-nio-8092-exec-10] com.tweetapp.service.TweetServiceImpl    : Reply added Successfully
+2021-04-15 21:47:28.384  INFO 7108 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW0iLCJpYXQiOjE2MTg1MDM0MjMsImV4cCI6MTYxODUwNDYyM30.EcsfF9nAQFWjp8AP2FnvtwIgrvWiyxdPqHyr79Jhrhc
+2021-04-15 21:47:28.387  INFO 7108 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : ram
+2021-04-15 21:47:34.659  INFO 7108 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW0iLCJpYXQiOjE2MTg1MDM0MjMsImV4cCI6MTYxODUwNDYyM30.EcsfF9nAQFWjp8AP2FnvtwIgrvWiyxdPqHyr79Jhrhc
+2021-04-15 21:47:34.661  INFO 7108 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : ram
+2021-04-15 21:47:48.938  INFO 7108 --- [http-nio-8092-exec-5] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW0iLCJpYXQiOjE2MTg1MDM0MjMsImV4cCI6MTYxODUwNDYyM30.EcsfF9nAQFWjp8AP2FnvtwIgrvWiyxdPqHyr79Jhrhc
+2021-04-15 21:47:48.940  INFO 7108 --- [http-nio-8092-exec-5] c.t.security.JwtAuthorizationFilter      : ram
+2021-04-15 21:47:49.063  INFO 7108 --- [http-nio-8092-exec-5] com.tweetapp.service.TweetServiceImpl    : Password Reset Successfully
+2021-04-15 21:48:45.710  INFO 7108 --- [http-nio-8092-exec-7] c.t.security.JwtAuthorizationFilter      : Basic cmFtOjEyMzQ1Ng==
+2021-04-15 21:49:24.369  INFO 7108 --- [http-nio-8092-exec-9] c.t.security.JwtAuthorizationFilter      : Basic cmFtOjEyMzQ1Ng==
+2021-04-15 21:50:01.118  INFO 7108 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : Basic cmFtOjEyMzQ1Njc=
+2021-04-15 21:50:01.226  INFO 7108 --- [http-nio-8092-exec-1] c.t.controller.AuthenticationController  : User -> ram
+2021-04-15 21:50:01.263  INFO 7108 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW0iLCJpYXQiOjE2MTg1MDM2MDEsImV4cCI6MTYxODUwNDgwMX0.-MGKKQ1R9eYKHHgOelzNPhZnQJ9r1P7fzesCTA-rwUM
+2021-04-15 21:50:01.265  INFO 7108 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : ram
+2021-04-15 21:50:16.300  INFO 7108 --- [http-nio-8092-exec-4] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW0iLCJpYXQiOjE2MTg1MDM2MDEsImV4cCI6MTYxODUwNDgwMX0.-MGKKQ1R9eYKHHgOelzNPhZnQJ9r1P7fzesCTA-rwUM
+2021-04-15 21:50:16.302  INFO 7108 --- [http-nio-8092-exec-4] c.t.security.JwtAuthorizationFilter      : ram
+2021-04-15 21:50:16.410  INFO 7108 --- [http-nio-8092-exec-4] com.tweetapp.service.TweetServiceImpl    : Password Reset Successfully
+2021-04-15 21:51:40.249  INFO 7108 --- [http-nio-8092-exec-6] c.t.security.JwtAuthorizationFilter      : Basic cmFtOjEyMzQ1Njc=
+2021-04-15 21:51:51.265  INFO 7108 --- [http-nio-8092-exec-8] c.t.security.JwtAuthorizationFilter      : Basic cmFtOjEyMzQ1Ng==
+2021-04-15 21:51:51.371  INFO 7108 --- [http-nio-8092-exec-8] c.t.controller.AuthenticationController  : User -> ram
+2021-04-15 21:51:51.407  INFO 7108 --- [http-nio-8092-exec-9] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW0iLCJpYXQiOjE2MTg1MDM3MTEsImV4cCI6MTYxODUwNDkxMX0.BKuTpNNXi72bO3XDNbISdFSGUgAeRynyVNOZod7Hk7Y
+2021-04-15 21:51:51.408  INFO 7108 --- [http-nio-8092-exec-9] c.t.security.JwtAuthorizationFilter      : ram
+2021-04-15 21:52:08.950  INFO 7108 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : Basic YWo6MTIzNDU2
+2021-04-15 21:52:08.956  INFO 7108 --- [http-nio-8092-exec-1] c.t.controller.AuthenticationController  : User -> aj
+2021-04-15 21:52:08.986  INFO 7108 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhaiIsImlhdCI6MTYxODUwMzcyOCwiZXhwIjoxNjE4NTA0OTI4fQ.Vj0lPLSAK1KL2mVwa6BiaOSuqZAeImb02tOasX5ATm4
+2021-04-15 21:52:08.987  INFO 7108 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : aj
+2021-04-15 21:52:33.000  INFO 7108 --- [http-nio-8092-exec-4] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 21:52:33.021 ERROR 7108 --- [http-nio-8092-exec-4] com.tweetapp.service.WelcomeServiceImpl  : Exception Occured while finding user with EmailId : java.lang.NullPointerException
+2021-04-15 21:52:33.290  INFO 7108 --- [http-nio-8092-exec-5] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 21:52:33.292 ERROR 7108 --- [http-nio-8092-exec-5] com.tweetapp.service.WelcomeServiceImpl  : Exception Occured while finding user with EmailId : java.lang.NullPointerException
+2021-04-15 21:52:33.500  INFO 7108 --- [http-nio-8092-exec-6] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 21:52:33.505 ERROR 7108 --- [http-nio-8092-exec-6] com.tweetapp.service.WelcomeServiceImpl  : Exception Occured while finding user with EmailId : java.lang.NullPointerException
+2021-04-15 21:52:33.706  INFO 7108 --- [http-nio-8092-exec-7] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 21:52:33.709 ERROR 7108 --- [http-nio-8092-exec-7] com.tweetapp.service.WelcomeServiceImpl  : Exception Occured while finding user with EmailId : java.lang.NullPointerException
+2021-04-15 21:52:34.016  INFO 7108 --- [http-nio-8092-exec-8] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 21:52:34.019 ERROR 7108 --- [http-nio-8092-exec-8] com.tweetapp.service.WelcomeServiceImpl  : Exception Occured while finding user with EmailId : java.lang.NullPointerException
+2021-04-15 21:52:34.584  INFO 7108 --- [http-nio-8092-exec-9] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 21:52:34.587 ERROR 7108 --- [http-nio-8092-exec-9] com.tweetapp.service.WelcomeServiceImpl  : Exception Occured while finding user with EmailId : java.lang.NullPointerException
+2021-04-15 21:52:34.851  INFO 7108 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 21:52:34.853 ERROR 7108 --- [http-nio-8092-exec-1] com.tweetapp.service.WelcomeServiceImpl  : Exception Occured while finding user with EmailId : java.lang.NullPointerException
+2021-04-15 21:52:35.109  INFO 7108 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 21:52:35.112 ERROR 7108 --- [http-nio-8092-exec-2] com.tweetapp.service.WelcomeServiceImpl  : Exception Occured while finding user with EmailId : java.lang.NullPointerException
+2021-04-15 21:52:44.727  INFO 7108 --- [http-nio-8092-exec-3] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 21:52:44.732  INFO 7108 --- [http-nio-8092-exec-3] com.tweetapp.service.WelcomeServiceImpl  : User present with Email Id : UserDetails [image=https://raw.githubusercontent.com/obliviate-dan/Login-Form/master/img/avatar.png, firstName=Ram, lastName=roy, email=r@gmail.com, loginId=ram, password=$2a$10$efQ.aiUPiLvXk.mA3srIMO0VNmNeNKBt5Ia1ZWYPL1Zf7XoTiFeim, contactNumber=1234567891]
+2021-04-15 21:52:49.869  INFO 7108 --- [http-nio-8092-exec-5] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 21:52:49.872 ERROR 7108 --- [http-nio-8092-exec-5] com.tweetapp.service.WelcomeServiceImpl  : Exception Occured while finding user with EmailId : java.lang.NullPointerException
+2021-04-15 21:52:56.193  INFO 7108 --- [http-nio-8092-exec-7] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 21:52:56.197  INFO 7108 --- [http-nio-8092-exec-7] com.tweetapp.service.WelcomeServiceImpl  : An User is Present with the username : ram
+2021-04-15 21:52:56.541  INFO 7108 --- [http-nio-8092-exec-8] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 21:52:56.544  INFO 7108 --- [http-nio-8092-exec-8] com.tweetapp.service.WelcomeServiceImpl  : An User is Present with the username : ram
+2021-04-15 21:52:56.942  INFO 7108 --- [http-nio-8092-exec-9] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 21:52:56.949  INFO 7108 --- [http-nio-8092-exec-9] com.tweetapp.service.WelcomeServiceImpl  : An User is Present with the username : ram
+2021-04-15 21:53:03.207  INFO 7108 --- [http-nio-8092-exec-10] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 21:53:03.211  INFO 7108 --- [http-nio-8092-exec-10] com.tweetapp.service.WelcomeServiceImpl  : No User is Present with this username : tram
+2021-04-15 21:53:40.015  INFO 7108 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 21:53:40.170  INFO 7108 --- [http-nio-8092-exec-2] com.tweetapp.service.WelcomeServiceImpl  : User Registered Successfully
+2021-04-15 21:55:02.292  INFO 7108 --- [http-nio-8092-exec-4] c.t.security.JwtAuthorizationFilter      : Basic dHJhZ2dnOjEyMzQ1Nzg=
+2021-04-15 21:59:17.261  INFO 7108 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-15 21:59:17.264  INFO 7108 --- [Thread-5] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2021-04-15 21:59:17.276  INFO 7108 --- [Thread-5] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:3, serverValue:48}] to localhost:27017 because the pool has been closed.
+2021-04-15 21:59:17.885  INFO 7108 --- [restartedMain] com.tweetapp.TweetAppApplication         : Starting TweetAppApplication using Java 1.8.0_201 on Lab-637519927065555442-1 with PID 7108 (C:\Users\User\Desktop\tweet-app-component2\tweet-app-backend\target\classes started by User in C:\Users\User\Desktop\tweet-app-component2\tweet-app-backend)
+2021-04-15 21:59:17.887  INFO 7108 --- [restartedMain] com.tweetapp.TweetAppApplication         : No active profile set, falling back to default profiles: default
+2021-04-15 21:59:18.279  INFO 7108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-04-15 21:59:18.300  INFO 7108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 2 MongoDB repository interfaces.
+2021-04-15 22:15:14.292  INFO 9424 --- [restartedMain] com.tweetapp.TweetAppApplication         : Starting TweetAppApplication using Java 1.8.0_201 on Lab-637519927065555442-1 with PID 9424 (C:\Users\User\Desktop\tweet-app-component2\tweet-app-backend\target\classes started by User in C:\Users\User\Desktop\tweet-app-component2\tweet-app-backend)
+2021-04-15 22:15:14.298  INFO 9424 --- [restartedMain] com.tweetapp.TweetAppApplication         : No active profile set, falling back to default profiles: default
+2021-04-15 22:15:14.381  INFO 9424 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-15 22:15:14.381  INFO 9424 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-15 22:15:15.368  INFO 9424 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-04-15 22:15:15.429  INFO 9424 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 2 MongoDB repository interfaces.
+2021-04-15 22:15:15.968  INFO 9424 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8092 (http)
+2021-04-15 22:15:15.977  INFO 9424 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-15 22:15:15.978  INFO 9424 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-15 22:15:16.089  INFO 9424 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-15 22:15:16.091  INFO 9424 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1709 ms
+2021-04-15 22:15:16.324  WARN 9424 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [AE396DEAE185696160DD1CEF1C727BDE]
+2021-04-15 22:15:16.329 ERROR 9424 --- [restartedMain] o.a.catalina.session.StandardManager     : Exception loading sessions from persistent storage
+
+java.io.StreamCorruptedException: invalid type code: 00
+	at java.io.ObjectInputStream.readObject0(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.defaultReadFields(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.defaultReadObject(Unknown Source) ~[na:1.8.0_201]
+	at java.lang.Throwable.readObject(Unknown Source) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectStreamClass.invokeReadObject(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.readSerialData(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.readOrdinaryObject(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.readObject0(Unknown Source) ~[na:1.8.0_201]
+	at java.io.ObjectInputStream.readObject(Unknown Source) ~[na:1.8.0_201]
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1545) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1040) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:218) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:354) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5194) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_201]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source) [na:1.8.0_201]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_201]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source) [na:1.8.0_201]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) [tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577) [spring-context-5.3.5.jar:5.3.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313) [spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) [spring-boot-2.4.4.jar:2.4.4]
+	at com.tweetapp.TweetAppApplication.main(TweetAppApplication.java:10) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_201]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.4.4.jar:2.4.4]
+
+2021-04-15 22:15:16.484  INFO 9424 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-04-15 22:15:16.565  INFO 9424 --- [cluster-ClusterId{value='60786d9c180c4007ad151b84', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:51}] to localhost:27017
+2021-04-15 22:15:16.566  INFO 9424 --- [cluster-ClusterId{value='60786d9c180c4007ad151b84', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=30240700}
+2021-04-15 22:15:16.583  INFO 9424 --- [cluster-rtt-ClusterId{value='60786d9c180c4007ad151b84', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:52}] to localhost:27017
+2021-04-15 22:15:16.741  INFO 9424 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-15 22:15:17.294  INFO 9424 --- [restartedMain] c.t.security.JwtAuthorizationFilter      : org.springframework.security.authentication.ProviderManager@3c538a53: 
+2021-04-15 22:15:17.606  INFO 9424 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-15 22:15:17.634  INFO 9424 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e75e10e, org.springframework.security.web.context.SecurityContextPersistenceFilter@79b7782a, org.springframework.security.web.header.HeaderWriterFilter@1ac7730f, org.springframework.web.filter.CorsFilter@3e5aa603, org.springframework.security.web.authentication.logout.LogoutFilter@44c0e866, com.tweetapp.security.JwtAuthorizationFilter@32ee7586, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5a6f2cab, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66113348, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@668294f1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7475c623, org.springframework.security.web.session.SessionManagementFilter@238569c0, org.springframework.security.web.access.ExceptionTranslationFilter@7977a756, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@455cee0]
+2021-04-15 22:15:17.682  INFO 9424 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-15 22:15:18.015  INFO 9424 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8092 (http) with context path ''
+2021-04-15 22:15:18.038  INFO 9424 --- [restartedMain] com.tweetapp.TweetAppApplication         : Started TweetAppApplication in 4.166 seconds (JVM running for 5.005)
+2021-04-15 22:16:09.270  INFO 9424 --- [http-nio-8092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-15 22:16:09.271  INFO 9424 --- [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-15 22:16:09.274  INFO 9424 --- [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-04-15 22:16:09.314  INFO 9424 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : Basic cmFtOjEyMzQ1Ng==
+2021-04-15 22:16:09.494  INFO 9424 --- [http-nio-8092-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:53}] to localhost:27017
+2021-04-15 22:16:09.721  INFO 9424 --- [http-nio-8092-exec-1] c.t.controller.AuthenticationController  : User -> ram
+2021-04-15 22:16:10.149  INFO 9424 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW0iLCJpYXQiOjE2MTg1MDUxNjksImV4cCI6MTYxODUwNjM2OX0.R3WohEUR_Sc0aPNm4JGaGRAUqrbFqtIDM8o4Zu2iJJI
+2021-04-15 22:16:10.185  INFO 9424 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : ram
+2021-04-15 22:16:33.541  INFO 9424 --- [http-nio-8092-exec-4] c.t.security.JwtAuthorizationFilter      : Basic cmFtOjEyMzQ1Njc=
+2021-04-15 22:18:06.698  INFO 9424 --- [http-nio-8092-exec-7] c.t.security.JwtAuthorizationFilter      : Basic cmFtOjEyMzQ5ODk4OQ==
+2021-04-15 22:19:13.580  INFO 9424 --- [http-nio-8092-exec-9] c.t.security.JwtAuthorizationFilter      : Basic cmFtOmdoZmhnZ2c=
+2021-04-15 22:19:21.556  INFO 9424 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : Basic cmFtOjEyMzQ1Ng==
+2021-04-15 22:19:21.675  INFO 9424 --- [http-nio-8092-exec-1] c.t.controller.AuthenticationController  : User -> ram
+2021-04-15 22:19:21.743  INFO 9424 --- [http-nio-8092-exec-3] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW0iLCJpYXQiOjE2MTg1MDUzNjEsImV4cCI6MTYxODUwNjU2MX0.sOyy2CwjQ5pDL2TLDLv5R9YWn57HKuU86FA5FKrn0RA
+2021-04-15 22:19:21.745  INFO 9424 --- [http-nio-8092-exec-3] c.t.security.JwtAuthorizationFilter      : ram
+2021-04-15 22:19:34.148  INFO 9424 --- [http-nio-8092-exec-5] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 22:19:34.156  INFO 9424 --- [http-nio-8092-exec-5] com.tweetapp.service.WelcomeServiceImpl  : No User is Present with this username : ras
+2021-04-15 22:19:34.582  INFO 9424 --- [http-nio-8092-exec-6] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 22:19:34.586  INFO 9424 --- [http-nio-8092-exec-6] com.tweetapp.service.WelcomeServiceImpl  : No User is Present with this username : rass
+2021-04-15 22:19:34.832  INFO 9424 --- [http-nio-8092-exec-7] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 22:19:34.837  INFO 9424 --- [http-nio-8092-exec-7] com.tweetapp.service.WelcomeServiceImpl  : No User is Present with this username : rass
+2021-04-15 22:19:35.190  INFO 9424 --- [http-nio-8092-exec-8] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 22:19:35.197  INFO 9424 --- [http-nio-8092-exec-8] com.tweetapp.service.WelcomeServiceImpl  : No User is Present with this username : rass
+2021-04-15 22:19:47.122  INFO 9424 --- [http-nio-8092-exec-10] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 22:19:47.130  INFO 9424 --- [http-nio-8092-exec-10] com.tweetapp.service.WelcomeServiceImpl  : An User is Present with the username : ram
+2021-04-15 22:19:47.499  INFO 9424 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 22:19:47.506  INFO 9424 --- [http-nio-8092-exec-1] com.tweetapp.service.WelcomeServiceImpl  : An User is Present with the username : ram
+2021-04-15 22:19:48.117  INFO 9424 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 22:19:48.121  INFO 9424 --- [http-nio-8092-exec-2] com.tweetapp.service.WelcomeServiceImpl  : An User is Present with the username : ram
+2021-04-15 22:19:55.313  INFO 9424 --- [http-nio-8092-exec-5] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 22:19:55.469  INFO 9424 --- [http-nio-8092-exec-5] com.tweetapp.service.WelcomeServiceImpl  : Password Updated Successfully
+2021-04-15 22:20:25.690  INFO 9424 --- [http-nio-8092-exec-7] c.t.security.JwtAuthorizationFilter      : Basic cmFtOjEyMzQ1Ng==
+2021-04-15 22:20:38.301  INFO 9424 --- [http-nio-8092-exec-9] c.t.security.JwtAuthorizationFilter      : Basic cmFtMToxMjM0NTY3
+2021-04-15 22:20:48.706  INFO 9424 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : Basic cmFtOjEyMzQ1Njc=
+2021-04-15 22:20:48.815  INFO 9424 --- [http-nio-8092-exec-1] c.t.controller.AuthenticationController  : User -> ram
+2021-04-15 22:20:48.864  INFO 9424 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW0iLCJpYXQiOjE2MTg1MDU0NDgsImV4cCI6MTYxODUwNjY0OH0.kqC_T0YnGyLiXZd4ynhNhCGeG5E15Y85pYPNvN3e504
+2021-04-15 22:20:48.866  INFO 9424 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : ram
+2021-04-15 22:23:39.675  INFO 9424 --- [http-nio-8092-exec-4] c.t.security.JwtAuthorizationFilter      : Basic bGlzYToxMjM0NTY=
+2021-04-15 22:23:49.171  INFO 9424 --- [http-nio-8092-exec-6] c.t.security.JwtAuthorizationFilter      : Basic bGlzYTEyOjEyMzQ1Ng==
+2021-04-15 22:23:49.177  INFO 9424 --- [http-nio-8092-exec-6] c.t.controller.AuthenticationController  : User -> lisa12
+2021-04-15 22:23:49.251  INFO 9424 --- [http-nio-8092-exec-7] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsaXNhMTIiLCJpYXQiOjE2MTg1MDU2MjksImV4cCI6MTYxODUwNjgyOX0.zaBFzA84XWgN1hGZZeDxr9TWJVbNIQJ1L8Hmboj1kLk
+2021-04-15 22:23:49.252  INFO 9424 --- [http-nio-8092-exec-7] c.t.security.JwtAuthorizationFilter      : lisa12
+2021-04-15 22:24:02.795  INFO 9424 --- [http-nio-8092-exec-10] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsaXNhMTIiLCJpYXQiOjE2MTg1MDU2MjksImV4cCI6MTYxODUwNjgyOX0.zaBFzA84XWgN1hGZZeDxr9TWJVbNIQJ1L8Hmboj1kLk
+2021-04-15 22:24:02.796  INFO 9424 --- [http-nio-8092-exec-10] c.t.security.JwtAuthorizationFilter      : lisa12
+2021-04-15 22:24:09.773  INFO 9424 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsaXNhMTIiLCJpYXQiOjE2MTg1MDU2MjksImV4cCI6MTYxODUwNjgyOX0.zaBFzA84XWgN1hGZZeDxr9TWJVbNIQJ1L8Hmboj1kLk
+2021-04-15 22:24:09.775  INFO 9424 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : lisa12
+2021-04-15 22:24:35.185  INFO 9424 --- [http-nio-8092-exec-4] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsaXNhMTIiLCJpYXQiOjE2MTg1MDU2MjksImV4cCI6MTYxODUwNjgyOX0.zaBFzA84XWgN1hGZZeDxr9TWJVbNIQJ1L8Hmboj1kLk
+2021-04-15 22:24:35.189  INFO 9424 --- [http-nio-8092-exec-4] c.t.security.JwtAuthorizationFilter      : lisa12
+2021-04-15 22:24:44.969  INFO 9424 --- [http-nio-8092-exec-6] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsaXNhMTIiLCJpYXQiOjE2MTg1MDU2MjksImV4cCI6MTYxODUwNjgyOX0.zaBFzA84XWgN1hGZZeDxr9TWJVbNIQJ1L8Hmboj1kLk
+2021-04-15 22:24:44.970  INFO 9424 --- [http-nio-8092-exec-6] c.t.security.JwtAuthorizationFilter      : lisa12
+2021-04-15 22:25:14.461  INFO 9424 --- [http-nio-8092-exec-8] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsaXNhMTIiLCJpYXQiOjE2MTg1MDU2MjksImV4cCI6MTYxODUwNjgyOX0.zaBFzA84XWgN1hGZZeDxr9TWJVbNIQJ1L8Hmboj1kLk
+2021-04-15 22:25:14.463  INFO 9424 --- [http-nio-8092-exec-8] c.t.security.JwtAuthorizationFilter      : lisa12
+2021-04-15 22:26:21.272  INFO 9424 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsaXNhMTIiLCJpYXQiOjE2MTg1MDU2MjksImV4cCI6MTYxODUwNjgyOX0.zaBFzA84XWgN1hGZZeDxr9TWJVbNIQJ1L8Hmboj1kLk
+2021-04-15 22:26:21.274  INFO 9424 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : lisa12
+2021-04-15 22:26:21.290  INFO 9424 --- [http-nio-8092-exec-1] com.tweetapp.service.TweetServiceImpl    : Tweet Posted Successfully
+2021-04-15 22:26:21.309  INFO 9424 --- [http-nio-8092-exec-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	internal.auto.downgrade.txn.commit = true
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2021-04-15 22:26:21.364  INFO 9424 --- [http-nio-8092-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.6.0
+2021-04-15 22:26:21.364  INFO 9424 --- [http-nio-8092-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 62abe01bee039651
+2021-04-15 22:26:21.364  INFO 9424 --- [http-nio-8092-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1618505781361
+2021-04-15 22:26:21.671  INFO 9424 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: _b5czvdiSFCyqgFeG7aZkA
+2021-04-15 22:26:21.745  INFO 9424 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsaXNhMTIiLCJpYXQiOjE2MTg1MDU2MjksImV4cCI6MTYxODUwNjgyOX0.zaBFzA84XWgN1hGZZeDxr9TWJVbNIQJ1L8Hmboj1kLk
+2021-04-15 22:26:21.746  INFO 9424 --- [http-nio-8092-exec-2] c.t.security.JwtAuthorizationFilter      : lisa12
+2021-04-15 22:26:29.184  INFO 9424 --- [http-nio-8092-exec-3] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsaXNhMTIiLCJpYXQiOjE2MTg1MDU2MjksImV4cCI6MTYxODUwNjgyOX0.zaBFzA84XWgN1hGZZeDxr9TWJVbNIQJ1L8Hmboj1kLk
+2021-04-15 22:26:29.185  INFO 9424 --- [http-nio-8092-exec-3] c.t.security.JwtAuthorizationFilter      : lisa12
+2021-04-15 22:26:29.207  INFO 9424 --- [http-nio-8092-exec-3] com.tweetapp.service.TweetServiceImpl    : Reply added Successfully
+2021-04-15 22:26:29.246  INFO 9424 --- [http-nio-8092-exec-4] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsaXNhMTIiLCJpYXQiOjE2MTg1MDU2MjksImV4cCI6MTYxODUwNjgyOX0.zaBFzA84XWgN1hGZZeDxr9TWJVbNIQJ1L8Hmboj1kLk
+2021-04-15 22:26:29.248  INFO 9424 --- [http-nio-8092-exec-4] c.t.security.JwtAuthorizationFilter      : lisa12
+2021-04-15 22:26:36.360  INFO 9424 --- [http-nio-8092-exec-6] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsaXNhMTIiLCJpYXQiOjE2MTg1MDU2MjksImV4cCI6MTYxODUwNjgyOX0.zaBFzA84XWgN1hGZZeDxr9TWJVbNIQJ1L8Hmboj1kLk
+2021-04-15 22:26:36.366  INFO 9424 --- [http-nio-8092-exec-6] c.t.security.JwtAuthorizationFilter      : lisa12
+2021-04-15 22:26:42.638  INFO 9424 --- [http-nio-8092-exec-8] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsaXNhMTIiLCJpYXQiOjE2MTg1MDU2MjksImV4cCI6MTYxODUwNjgyOX0.zaBFzA84XWgN1hGZZeDxr9TWJVbNIQJ1L8Hmboj1kLk
+2021-04-15 22:26:42.641  INFO 9424 --- [http-nio-8092-exec-8] c.t.security.JwtAuthorizationFilter      : lisa12
+2021-04-15 22:26:42.651  INFO 9424 --- [http-nio-8092-exec-8] com.tweetapp.service.TweetServiceImpl    : Reply added Successfully
+2021-04-15 22:26:42.679  INFO 9424 --- [http-nio-8092-exec-9] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsaXNhMTIiLCJpYXQiOjE2MTg1MDU2MjksImV4cCI6MTYxODUwNjgyOX0.zaBFzA84XWgN1hGZZeDxr9TWJVbNIQJ1L8Hmboj1kLk
+2021-04-15 22:26:42.680  INFO 9424 --- [http-nio-8092-exec-9] c.t.security.JwtAuthorizationFilter      : lisa12
+2021-04-15 22:27:05.098  INFO 9424 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsaXNhMTIiLCJpYXQiOjE2MTg1MDU2MjksImV4cCI6MTYxODUwNjgyOX0.zaBFzA84XWgN1hGZZeDxr9TWJVbNIQJ1L8Hmboj1kLk
+2021-04-15 22:27:05.099  INFO 9424 --- [http-nio-8092-exec-1] c.t.security.JwtAuthorizationFilter      : lisa12
+2021-04-15 22:27:11.157  INFO 9424 --- [http-nio-8092-exec-3] c.t.security.JwtAuthorizationFilter      : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsaXNhMTIiLCJpYXQiOjE2MTg1MDU2MjksImV4cCI6MTYxODUwNjgyOX0.zaBFzA84XWgN1hGZZeDxr9TWJVbNIQJ1L8Hmboj1kLk
+2021-04-15 22:27:11.159  INFO 9424 --- [http-nio-8092-exec-3] c.t.security.JwtAuthorizationFilter      : lisa12
+2021-04-15 22:27:36.432  INFO 9424 --- [http-nio-8092-exec-5] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 22:27:36.441  INFO 9424 --- [http-nio-8092-exec-5] com.tweetapp.service.WelcomeServiceImpl  : User present with Email Id : UserDetails [image=https://raw.githubusercontent.com/obliviate-dan/Login-Form/master/img/avatar.png, firstName=Ram, lastName=roy, email=r@gmail.com, loginId=ram, password=$2a$10$eeal.TW4Lu0UEPrdXfTu.uEf039Jns/uL9EZfvvr5sK7tJIQ.45.W, contactNumber=1234567891]
+2021-04-15 22:27:41.466  INFO 9424 --- [http-nio-8092-exec-7] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 22:27:41.471  INFO 9424 --- [http-nio-8092-exec-7] com.tweetapp.service.WelcomeServiceImpl  : User present with Email Id : UserDetails [image=https://www.w3schools.com/w3images/avatar6.png, firstName=Lisa, lastName=M, email=l@gmail.com, loginId=lisa12, password=$2a$04$c1ONtYXBZCCdq37JeHSvEuaZlcJdkteU886mBcgTF.1c.oMCuCZES, contactNumber=5434567891]
+2021-04-15 22:27:45.215  INFO 9424 --- [http-nio-8092-exec-8] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 22:27:45.220 ERROR 9424 --- [http-nio-8092-exec-8] com.tweetapp.service.WelcomeServiceImpl  : Exception Occured while finding user with EmailId : java.lang.NullPointerException
+2021-04-15 22:27:47.391  INFO 9424 --- [http-nio-8092-exec-9] c.t.security.JwtAuthorizationFilter      : null
+2021-04-15 22:27:47.396 ERROR 9424 --- [http-nio-8092-exec-9] com.tweetapp.service.WelcomeServiceImpl  : Exception Occured while finding user with EmailId : java.lang.NullPointerException
+2021-04-15 22:37:06.730  INFO 9424 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-04-15 22:37:06.821  INFO 9424 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-15 22:37:06.824  INFO 9424 --- [RMI TCP Connection(2)-127.0.0.1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2021-04-15 22:37:06.838  INFO 9424 --- [RMI TCP Connection(2)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:3, serverValue:53}] to localhost:27017 because the pool has been closed.

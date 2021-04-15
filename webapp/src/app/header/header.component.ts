@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(["/"]);
     this.authService.isLoggedin = false;
     this.authService.loggedInUserId = null;
+    this.authService.setToken(null);
   }
 
 

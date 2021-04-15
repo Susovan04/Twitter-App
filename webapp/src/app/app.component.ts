@@ -178,32 +178,35 @@ export class AppComponent implements OnInit{
     console.log("In submit");
     console.log(this.loginForm.value);
     this.closeButton1.nativeElement.click();
-    this.login(this.loginForm.get("loginUserId").value, this.loginForm.get("loginPassword").value).subscribe(
+    this.authService.login(this.loginForm.get("loginUserId").value, this.loginForm.get("loginPassword").value).subscribe(
       (response) => {
         console.log("success"+response);
         if(response) {
           this.authService.isLoggedin = true;
           const data = JSON.parse(JSON.stringify(response));
-          console.log(data.loginId)
-          this.authService.loggedInUserId = data.loginId;
+          console.log(data.token)
+          console.log(data.user)
+          this.authService.loggedInUserId = data.user;
+          this.authService.setToken(data.token);
           this.router.navigate(['/tweet']);
 
-        } else {
-          alert("Invalid Credentials");
-        }
+        } 
       },
-      (responseError) => {
-        this.error = responseError.error.errorMessage;
+      (err) => {
+        console.log(err)
+        if (err.status == 401) {
+          alert("Invalid username/password");
+        }
       });
       this.loginForm.reset();
   }
 
-  login(loginUserId: string, loginPassword: string) : Observable<Object> {
+  /*login(loginUserId: string, loginPassword: string) : Observable<Object> {
     return this.httpClient.post<User>(environment.baseUrl+"login",{loginUserId,loginPassword});
-  }
+  }*/
 
   forgotPassword(userName: string, newPassword: string): Observable<Object> {
-    return this.httpClient.put(environment.baseUrl+userName+"/forgot",newPassword);
+    return this.httpClient.put(environment.baseUrl+"forgot/"+userName,newPassword);
   }
 
   addUser(user: User): Observable<Object> {

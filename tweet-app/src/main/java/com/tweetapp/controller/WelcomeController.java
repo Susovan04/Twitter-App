@@ -1,7 +1,6 @@
 package com.tweetapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +14,6 @@ import com.tweetapp.repository.TweetRepository;
 import com.tweetapp.repository.UserRepository;
 import com.tweetapp.service.WelcomeService;
 
-@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1.0/tweets")
 public class WelcomeController {
@@ -47,16 +45,16 @@ public class WelcomeController {
 		return status;
 	}
 	
-	@PutMapping("/{username}/forgot")
+	@PutMapping("/forgot/{username}")
 	public boolean forgotPassword(@PathVariable("username") String username, @RequestBody String password) {
 		boolean status = welcomeService.processForgotPassword(username, password);
 		return status;
 	}
 	
-	@PostMapping("/login")
-	public UserDetails userLogin(@RequestBody String json) {
-		UserDetails loggedinUser = welcomeService.userLogin(json);
-		return loggedinUser;
-	}
+	/*
+	 * @PostMapping("/login") public UserDetails userLogin(@RequestBody String json)
+	 * { UserDetails loggedinUser = welcomeService.userLogin(json); return
+	 * loggedinUser; }
+	 */
 	
 }

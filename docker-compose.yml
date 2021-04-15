@@ -1,0 +1,35 @@
+version: '3'
+services:
+  mymongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+        - 2181:2181
+  kafka:
+    image: wurstmeister/kafka
+    ports:
+        - 9092:9092
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
+      KAFKA_ADVERTISED_PORT: "9092"
+      KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
+  tweet-app-kafka-consumer:
+    image: tweet-app-kafka-consumer
+    ports:
+      - 8050:8050
+    links:
+      - kafka    
+  tweet-app-backend:
+    image: tweet-app-backend
+    ports:
+      - 8092:8092
+    links:
+      - mymongodb
+      - kafka
+  tweet-app:
+    image: tweet-app
+    ports:
+        - 4200:80
